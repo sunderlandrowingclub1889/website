@@ -1,0 +1,17 @@
+extends /../includes/page.pug
+
+block head
+  - css = '/event/style.css'
+  script(src='https://code.jquery.com/jquery-3.6.3.slim.min.js')
+  script(type='module', src='/event/script.js')
+
+block content
+  #header
+    h1 Event
+  #sections
+    .section.row
+      .section-content
+        h1#title Loading...
+        p#description Loading...
+      .section-attachments
+        .attachment#date Loading...

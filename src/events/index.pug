@@ -1,0 +1,29 @@
+extends /../includes/page.pug
+
+block head
+  - css = '/events/style.css'
+  //- link(rel='preload', as='image', href=`/assets/${headerImage}.webp`)
+  script(src='https://code.jquery.com/jquery-3.6.3.slim.min.js')
+  script(type='module', src='/events/script.js')
+
+block content
+  template#chevron-left-icon: include /../includes/icons/chevron-left.svg
+  template#chevron-right-icon: include /../includes/icons/chevron-right.svg
+  #info
+    #info-section
+      div
+        h1 Events
+        p There's plenty of space here that can be used for some information. I don't know exactly what you would write here, but it could be something like a general overview of the schedule or something. For now, here's some fake Latin dummy text.
+        p Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc vulputate in odio vitae dapibus. Phasellus varius, nisl eu ullamcorper aliquet, magna orci gravida purus, eget dapibus sem est id ligula. Nam imperdiet iaculis purus. Duis pulvinar libero metus, non tincidunt est dapibus in. Nam condimentum finibus mauris, quis sollicitudin magna laoreet quis. Maecenas leo mauris, iaculis vitae vulputate ultrices, volutpat sed leo. Proin eget eros nulla. Praesent at massa nibh. Aenean at hendrerit ligula. Nullam pulvinar eu urna a pulvinar. Ut sodales sapien lectus, nec laoreet libero aliquam vitae.
+        p In aliquam rhoncus vestibulum:
+        ul
+          li Praesent
+          li Aenean
+          li Integer
+          li Dapibus
+        p In aliquam rhoncus vestibulum. Integer id sagittis erat. Donec tristique dui sed porttitor convallis. In fermentum diam vel enim fringilla, et rhoncus quam efficitur. Donec accumsan lorem quis placerat iaculis. In bibendum tellus at imperdiet tempor. Sed dapibus nisl non lorem posuere, ac porta nibh imperdiet. Fusce volutpat cursus eros a hendrerit. Proin diam nisl, lobortis sed rutrum vel, mollis eget dolor. Integer enim erat, tempus ac placerat et, imperdiet ut neque. Integer tristique augue eu sapien viverra, vitae convallis mi consectetur.
+      div
+        h1 Upcoming Events
+        #upcoming-events
+    h1 Calendar
+  #calendar

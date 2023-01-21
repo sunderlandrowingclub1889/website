@@ -1,0 +1,111 @@
+.nav-bar
+  display: flex
+  align-items: center
+  margin-bottom: 12px
+  gap: 16px
+  
+  &>.month-name-display
+    flex: 1
+    cursor: default
+    user-select: none
+    font-size: 1.5em
+    padding: 4px 24px
+
+  &>button
+    display: flex
+    align-items: center
+    color: #fff
+    fill: currentcolor
+    padding: 4px
+    background: none
+    border: none
+    cursor: pointer
+    border-radius: 4px
+    
+    &:hover
+      background-color: var(--background-color)
+    
+    &>svg
+      display: block
+      width: 24px
+      height: 24px
+  
+    &:first-of-type
+      padding-right: 12px
+    
+    &:last-of-type
+      padding-left: 12px
+
+.day-grid
+  display: grid
+  grid-template-columns: repeat(7, 1fr)
+  gap: 4px
+  user-select: none
+
+  .date
+    position: relative
+    min-height: 6em
+    overflow: hidden
+    border-radius: 4px
+    
+    &.off-month
+      opacity: 0.5
+
+    &::before
+      content: attr(data-date)
+      position: absolute
+      left: 0
+      right: 0
+      top: 0
+      bottom: 0
+      display: flex
+      justify-content: flex-start
+      align-items: flex-start
+      box-sizing: border-box
+      padding: 8px
+      flex: 1
+      background-color: var(--background-color)
+    
+    &.today
+      &::before
+        box-shadow: inset 0 0 0 2px #fff
+    
+      &::after
+        content: ''
+        position: absolute
+        top: -18px
+        right: -18px
+        display: block
+        width: 36px
+        height: 36px
+        background-color: #fff
+        transform: rotate(45deg)
+      
+      &>.events-list>li>.event::before
+        border-color: #fff
+    
+    &>.events-list
+      position: relative
+      padding: calc(1em + 16px) 8px 8px 20px
+      list-style: none
+      margin: 0
+      
+      &>li>.event
+        position: relative
+        cursor: pointer
+        color: #fff
+        text-decoration: none
+
+        &::before
+          content: ''
+          position: absolute
+          top: 0.32em
+          right: calc(100% + 4px)
+          display: block
+          width: 20px
+          height: 0.7em
+          border: 2px solid var(--base-color)
+          border-top-right-radius: 0.35em
+          border-bottom-right-radius: 0.35em
+          box-sizing: border-box
+          background-color: var(--event-color, #fff)

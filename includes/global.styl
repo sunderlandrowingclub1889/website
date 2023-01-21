@@ -1,0 +1,277 @@
+@import 'event_colours.styl'
+
+:root
+  color-scheme: light
+  for name, value in $eventColours
+    --event-color-{name}: value
+
+body
+  --nav-bar-height: 80px
+  --base-color: #004aad
+  --background-color: #38b6ff
+  background-color: var(--base-color)
+  color: #fff
+  font-family: 'Noto Sans', Arial, sans-serif
+  margin: 0
+  padding-top: var(--nav-bar-height)
+  min-height: 100vh
+  box-sizing: border-box
+  display: flex
+  flex-direction: column
+
+#nav-bar
+  position: fixed
+  top: 0
+  left: 0
+  width: 100%
+  height: var(--nav-bar-height)
+  border-bottom: 2px solid var(--base-color)
+  display: flex
+  align-items: stretch
+  background-color: #fff
+  padding-right: 30px
+  box-sizing: border-box
+  gap: 4px
+  z-index: 99
+
+.row
+  display: flex
+
+.filler
+  flex: 1
+
+.nav-button
+  display: flex
+  text-decoration: none
+  align-items center
+  padding: 0 20px
+  font-size: 1.2em
+  color: #000
+
+  &:hover
+    background-color: var(--background-color)
+    color: #fff
+  
+.nav-drop-down
+  position: relative
+  display: flex
+  align-items center
+  padding: 0 20px
+  font-size: 1.2em
+  color: #000
+  cursor: default
+
+  svg
+    width: 24px
+    height: 24px
+    fill: #000
+    margin-left: 4px
+    margin-right: -8px
+  
+  .nav-drop-down-list
+    display: none
+    position: absolute
+    top: 100%
+    left: 0
+    flex-direction: column
+    background-color: #fff
+    border-bottom-left-radius: 4px
+    border-bottom-right-radius: 4px
+    overflow: hidden
+    
+    .nav-drop-down-option
+      padding: 6px 18px
+      color: #000
+      text-decoration: none
+      border: 2px solid #fff
+    
+      &:hover
+        background-color: var(--background-color)
+        color: #fff
+  
+  &:hover
+    background-color: var(--base-color)
+    color: #fff
+    
+    svg
+      fill: #fff
+    
+    .nav-drop-down-list
+      display: flex
+
+#content
+  flex: 1 0 auto
+
+#footer
+  background-color: #fff
+  color: #000
+  padding: 10px 20px
+  flex-shrink: 0
+  display: flex
+  align-items: center
+  justify-content: space-between
+  gap: 10px
+
+  .row
+    gap: 4px
+    
+    &.location-row
+      font-size: 0.8em
+      align-items: center
+
+  .footer-icon
+    fill: #000
+    
+    &>svg
+      width: 24px
+      height: 24px
+  
+  .footer-social-link
+    display: flex
+    align-items: center
+    color: #000
+    fill: currentColor
+    padding: 10px
+    margin: -10px 0
+    
+    &>svg
+      width: 36px
+      height: 36px
+    
+    &:hover
+      background-color: var(--background-color)
+      color: #fff
+    
+    &:last-child
+      margin-right: 0
+
+#footer-contact
+  display: flex
+  align-items: center
+  gap: 30px
+
+#footer-social
+  display: flex
+  align-items: stretch
+  align-self: stretch
+
+#home-button
+  font-family: 'Hammersmith One'
+  text-transform: uppercase
+  padding: 0 30px
+  white-space: wrap
+  
+  &>:nth-child(2)
+    display: flex
+    flex-direction: column
+    align-items: center
+    letter-spacing: 0.2em
+    line-height: 0.9em
+    
+    &>:nth-child(2)
+      font-size: 0.8em
+  
+  position: relative
+  &::after
+    content: '[WORK IN PROGRESS]'
+    font-size: 0.6em
+    position: absolute
+    bottom: 4px
+    right: 4px
+    opacity: 0.5
+    font-weight: 700
+
+#nav-logo>svg
+  fill: currentColor
+  height: calc(var(--nav-bar-height) - 24px)
+  margin-right: 10px
+  margin-left: -10px
+
+#nav-list
+  position: fixed
+  left: 0
+  top: var(--nav-bar-height)
+  right: 0
+  bottom: 0
+  z-index: 9
+  background-color: #fff
+  color: #000
+  display: flex
+  flex-direction: column
+  font-size: 28px
+  
+  .nav-list-section
+    position: relative
+    display: flex
+    flex-direction: column
+    
+    &::before
+      content: attr(data-title)
+      padding: 4px 20px 0
+      font-size: 0.8em
+    
+    &::after
+      content: ''
+      display: block
+      width: 2px
+      background-color: var(--base-color)
+      position: absolute
+      top: calc(1em + 14px)
+      bottom: 16px
+      left: 20px
+      pointer-events: none
+
+    .nav-list-button
+      padding-left: 36px
+  
+  .nav-list-button
+    color: #000
+    text-decoration: none
+    padding: 10px 20px
+
+#nav-bar-hamburger-button
+  display: none
+  
+  svg
+    display: block
+    fill: #000
+    width: calc(var(--nav-bar-height) - 4px)
+    height: calc(var(--nav-bar-height) - 4px)
+  
+  &:not([data-list-visible])>.close-icon
+    display: none
+  
+  &[data-list-visible]>.menu-icon
+    display: none
+
+@media screen and (min-width: 1001px)
+  #nav-list
+    display: none !important
+
+@media screen and (max-width: 1000px)
+  #nav-bar
+    padding-right: 0
+
+  .wide-screen
+    display: none
+  
+  #nav-bar-hamburger-button
+    display: flex
+    width: var(--nav-bar-height)
+    justify-content: center
+    align-items: center
+  
+  #footer-website
+    display: none
+  
+  #footer-contact
+    flex-direction: column
+    gap: 10px
+    align-items: flex-start
+
+  #footer-social
+    flex-direction: column
+    justify-content: space-between
+    
+    &>.footer-social-link
+      margin: 0

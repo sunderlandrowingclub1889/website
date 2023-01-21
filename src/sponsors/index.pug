@@ -1,0 +1,50 @@
+extends /../includes/page.pug
+
+append html
+  - const headerImage = 'sponsors_header'
+
+block head
+  - css = '/sponsors/style.css'
+  link(rel='preload', as='image', href=`/assets/${headerImage}.webp`)
+  script(type='module', src='/sponsors/script.js')
+
+block content
+  #header(style=`background-image:linear-gradient(to top, var(--base-color), transparent 100px),url('/assets/${headerImage}.webp');`)
+    h1 Support our Future
+  #sections
+    .section
+      .sub-section
+        .section-content
+          h1 Donations
+          p Any amount is welcome
+        .section-attachments.important
+          a(href='https://www.justgiving.com/crowdfunding/sunderlandrowingclubhouse', target='_blank', rel='noopener'): img(data-src='/assets/sponsors/qr.webp')
+      .sub-section
+        .section-content
+          h1 Donations
+          p Any amount is welcome
+        .section-attachments.important
+          a(href='https://www.justgiving.com/crowdfunding/sunderlandrowingclubhouse', target='_blank', rel='noopener'): img(data-src='/assets/sponsors/qr.webp')
+    #sponsors.section
+      a(href='https://example.com/sponsor', target='_blank', rel='noopener'): img(data-src='/assets/sponsors/example.webp')
+      a(href='https://example.com/sponsor', target='_blank', rel='noopener'): img(data-src='/assets/sponsors/example.webp')
+      a(href='https://example.com/sponsor', target='_blank', rel='noopener'): img(data-src='/assets/sponsors/example.webp')
+      a(href='https://example.com/sponsor', target='_blank', rel='noopener'): img(data-src='/assets/sponsors/example.webp')
+      a(href='https://example.com/sponsor', target='_blank', rel='noopener'): img(data-src='/assets/sponsors/example.webp')
+      a(href='https://example.com/sponsor', target='_blank', rel='noopener'): img(data-src='/assets/sponsors/example.webp')
+      a(href='https://example.com/sponsor', target='_blank', rel='noopener'): img(data-src='/assets/sponsors/example.webp')
+      a(href='https://example.com/sponsor', target='_blank', rel='noopener'): img(data-src='/assets/sponsors/example.webp')
+      a(href='https://example.com/sponsor', target='_blank', rel='noopener'): img(data-src='/assets/sponsors/example.webp')
+      a(href='https://example.com/sponsor', target='_blank', rel='noopener'): img(data-src='/assets/sponsors/example.webp')
+    .section.row
+      .section-content
+        h1 Example Sponsorship 1
+        p Some information about this sponsorship, like what exactly the club got from it.
+      .section-attachments.important
+        a(href='https://example.com/sponsor', target='_blank', rel='noopener'): img(data-src='/assets/sponsors/example.webp')
+    .section.row
+      .section-content
+        h1 Example Sponsorship 2
+        p Add as many of these sections as you want.
+      .section-attachments.important
+        a(href='https://example.com/sponsor', target='_blank', rel='noopener'): img(data-src='/assets/sponsors/example.webp')

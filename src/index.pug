@@ -1,0 +1,17 @@
+extends /../includes/page.pug
+
+block head
+  link(rel='preload', as='image', href='/assets/header_background.webp')
+  script(type='module', src='/script.js')
+
+block content
+  #home-header
+    #home-header-text
+      #home-logo: include /../includes/icons/logo.svg
+  #sections
+    .section.row
+      .section-content
+        h1 Under Construction
+        p This website is currently under construction.
+      #twitter-feed
+        <a class="twitter-timeline" data-width="450" data-height="400" data-dnt="true" data-theme="light" href="https://twitter.com/Sunderland_RC?ref_src=twsrc%5Etfw">Loading tweets...</a> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>

@@ -1,0 +1,39 @@
+extends /../includes/page.pug
+
+append html
+  - const headerImage = 'about_header'
+
+block head
+  - css = '/about/style.css'
+  link(rel='preload', as='image', href=`/assets/${headerImage}.webp`)
+  script(type='module', src='/about/script.js')
+
+block content
+  #header(style=`background-image:linear-gradient(to top, var(--base-color), transparent 100px),url('/assets/${headerImage}.webp');`)
+  #sections
+    .section.row
+      .section-content
+        h1 Sunderland Rowing Club
+        p This should be some general information about the club. Things that might make people more interested in reading the rest of the page. Kind of like a short summary or taste of the rest of the page, but it should be meaningful on its own and not just repeat things that are mentioned below. Maybe mention some quick stats, like roughly how many years it has been around, for example "For more than a hundred years ..." or something like that.
+        p It should probably be one or two paragraphs.
+      .section-attachments
+        img(data-src='https://sunderland-rowing-club-preview.pages.dev/assets/header_background.webp')
+    .section.row
+      .section-content
+        h1 History
+        p This should be everything you want people to know about the history of the club. Things like how it started, who started it, big changes that has happened that improved the club, and things like that.
+        p This can really go into detail about things, so it can be as many paragraphs as needed. However, keep in mind that too much information might make people stop reading/caring.
+      .section-attachments
+        .image-scroller(data-dir='history/example/')
+        img(data-src='/assets/history/2.webp')
+        img(data-src='/assets/history/3.webp')
+    .section.row
+      .section-content
+        h1 Thing
+        p Add as many sections as you want about specific things that you want people to know about. Length doesn't really matter here, some sections can be short, some can be long. If you have a lot of them, try to balance it a bit. For example, maybe put a shorter section between two long ones so that people get a break.
+      .section-attachments
+        img(data-src='https://sunderland-rowing-club-preview.pages.dev/assets/header_background.webp')
+    .section.row
+      .section-content
+        h1 Want to join?
+        p Here at the bottom should be a section about joining the club, because if they get to this point they now know a lot about the club, so they might want to also know how they can join.

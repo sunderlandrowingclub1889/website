@@ -1,0 +1,24 @@
+{
+  "webbuilder": {
+    "cloudflareSPARouter": true,
+    "useTaggedTemplateReplacer": true,
+    "watch": [
+      "src",
+      "includes",
+      "images",
+      "events"
+    ],
+    "pugLocals": {
+      "domain": "sunderland-rowing-club-preview.pages.dev"
+    },
+    "forceHardReload": [
+      "includes/components"
+    ]
+  },
+  "type": "module",
+  "dependencies": {
+    "luxon": "^3.2.1",
+    "sharp": "^0.31.3",
+    "webbuilder": "github:EvenTorset/WebBuilder#6ff2c061688e72cb57c72a969d1d8d4f501ca7a2"
+  }
+}

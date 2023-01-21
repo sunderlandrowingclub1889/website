@@ -1,0 +1,33 @@
+extends /../includes/members_page.pug
+
+block pageTitle
+  | Masters
+
+block headerImage
+  - const headerImage = 'members/masters_header'
+
+block sections
+  .section.row
+    .section-content
+      h1 Placeholder title
+      p This should be some info related to the masters.
+      p Two or three paragraphs would probably be good.
+      h1 Placeholder title 2
+      p You can have multiple titles in a single section if you want.
+    .section-attachments.important
+      .plan.attachment
+        .plan-name Masters Training
+        .plan-price
+          .plan-price-value £180
+          .plan-price-per annually
+      .attachment
+        h2 Coaches
+        ul
+          li Chris Webb
+  .section
+    h1 Placeholder title 3
+    p Add however many sections you need.
+
+block afterGallery
+  #video.section
+    .video: <iframe width="560" height="315" src="https://www.youtube.com/embed/ZBMbNOI7kiM" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>

@@ -1,0 +1,150 @@
+#sections
+  margin-top: -60px
+  z-index: 1
+  display: flex
+  flex-direction: column
+  align-items: center
+  gap: 60px
+  margin-bottom: 120px
+
+.section
+  background-color: var(--background-color)
+  width: @css{min(calc(100% - 120px), 1460px)}
+  min-width: 660px
+  padding: 20px 120px 60px 60px
+  margin-left: 20px
+  margin-right: 100px
+  border-radius: 4px
+  box-shadow: 0 4px 16px #0004
+  box-sizing: border-box
+
+  &.row>:first-child
+    flex: 1
+
+  h1
+    font-size: 2.5em
+
+  p
+    font-size: 1.25em
+  
+  #twitter-feed
+    margin-top: 1.675em
+    margin-right: -180px
+    margin-left: 80px
+
+  .twitter-timeline > iframe
+      width: 450px !important
+
+  a.twitter-timeline
+    display: block
+    width: 450px !important
+    height: 400px !important
+    background-color: #fff
+    border-radius: 12px
+    padding: 20px
+    box-sizing: border-box
+
+  &>.section-attachments
+    display: flex
+    flex-direction: column
+    align-items: stretch
+    gap: 10px
+    margin-top: 1.675em
+    margin-right: -180px
+    margin-left: 80px
+    
+    .attachment
+      background-color: #fff
+      color: #000
+      padding: 12px 18px
+      border-radius: 4px
+      
+      h2
+        margin-top: 0
+        margin-bottom: 0.5em
+      
+      ul
+        margin-top: 0.5em
+        font-size: 20px
+    
+    .plan
+      display: flex
+      align-items: center
+      gap: 1em
+
+      .plan-name
+        font-size: 1.5em
+        white-space: nowrap
+        flex: 1
+      
+      .plan-price-value
+        font-size: 2em
+      
+      .plan-price-per::before
+        content: '/ '
+
+  .sub-section
+    display: flex
+    align-items: flex-start
+    justify-content: space-between
+    margin-top: 1.675em
+    
+    &>.section-content>:first-child
+      margin-top: 0
+    
+    &>.section-attachments
+      margin-right: -180px
+
+#header
+  display: flex
+  align-items: center
+  justify-content: center
+  height: 300px
+  background-position: 50% 50%
+  background-size: cover
+  padding: 0 0 50px
+  font-size: 30px
+  box-sizing: border-box
+  
+  &>h1
+    display: block
+    width: @css{min(calc(100% - 300px), 1460px)}
+    filter: drop-shadow(0 1px 2px #0008) drop-shadow(0 0.1em 0.1em #0004)
+
+.section h1
+  margin-bottom: 0.5em
+
+@media screen and (max-width: 1000px)
+  .section
+    min-width: 0
+    margin: 0
+    padding: 20px 20px 60px 20px
+    width: @css{min(calc(100% - 40px), 1460px)}
+    font-size: 0.8em
+  
+    &.row
+      flex-direction: column
+
+  &>.section-attachments
+    &:not(.important)
+      display: none
+
+    &.important
+      margin: 40px 0 -40px
+  
+  &>.sub-section
+    flex-direction: column
+    justify-content: flex-start
+
+    &>.section-attachments
+      &:not(.important)
+        display: none
+
+      &.important
+        margin: 20px 0 0
+
+    &:last-child>.section-attachments.important
+      margin-bottom: -40px
+
+  #header>h1
+    width: auto

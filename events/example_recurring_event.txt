@@ -1,0 +1,41 @@
+Date: Jan 20, 2023
+Time: 14:30
+Recurs: Weekly
+Ends: Mar 21, 2023
+Name: Recurring event
+Image: example_event
+Colour: training-session
+---
+
+This is an example event that recurs. The event properties are the same as regular events, except there are two new properties called Recurs and Ends.
+
+For recurring events, the Date property is the date of the first event.
+
+The Ends property is the first date that will not have the event. If the event doesn't recur every day, this can be any date between the last event and what would be the one after the last if it didn't end. If the Ends property is missing, the event will recur indefinitely.
+
+The Recurs value must be one of:
+- Daily
+- Weekly
+- Monthly
+- Monthly from end
+- Yearly
+- Annually
+- Week in month
+- Week in month from end
+
+
+Below is more information about what each of these values do:
+
+- "Daily" means the event happens every day at the same time each day.
+
+- "Weekly" means the event happens on the same day of the week each week. So, if the Date property is set to Jan 20, 2023, which is a Friday, the event will show up on every Friday.
+
+- "Monthly" means the event happens on the same day each month, if the month has that day. For example, if the date is Jan 20, 2023, the event will show up on the 20th of every month. If the date is set to something like Jan 30, 2023, then the event will not show up in February because there is no February 30th.
+
+- "Monthly from end" is the same as "Monthly", but counting the days until the end of the month instead of from the start. For example, Jan 20, 2023 would make the event show up 11 days from the end of every month, like Feb 17, 2023.
+
+- "Yearly" and "Annually" both do the same thing, which is making the event show up on the same day of the same month each year.
+
+- "Week in month" means that the event happens the same day of the week in the same week of the month. For example, Jan 20, 2023 is the Friday of week 4 of the month, so the event would show up on every Friday of week 4, like Feb 24, 2023, or Apr 21, 2023.
+
+- "Week in month from end" means that the event happens the same day of the week from the end of each month. For example, Jan 20, 2023 is the Friday of the third week when counting from the end of the month, so the event would also show up on e.g. Apr 14, 2023, and Jul 21, 2023.

@@ -1,0 +1,37 @@
+@import '/includes/global.styl'
+@import '/includes/page_sections.styl'
+
+.section-attachments
+  &>a
+    display: block
+    max-width: 400px
+    background-color: #fff
+    border: 8px solid #fff
+    border-radius: 4px
+    cursor: pointer
+    
+    @media screen and (max-width: 1000px)
+      max-width: @css{min(400px, 100%)}
+
+    &>img
+      display: block
+      width: 100%
+      background-color: #fff
+
+#sponsors
+  display: grid
+  padding: 20px
+  gap: 10px
+  grid-template-columns: @css{repeat(auto-fill, minmax(min(400px, 100%), 1fr))}
+  justify-items: center
+  
+  &>a
+    display: block
+    max-width: @css{min(400px, 100%)}
+    border: 8px solid #fff
+    border-radius: 4px
+    cursor: pointer
+
+    &>img
+      display: block
+      width: 100%

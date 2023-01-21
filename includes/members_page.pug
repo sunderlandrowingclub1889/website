@@ -1,0 +1,20 @@
+extends /../includes/page.pug
+
+block html
+  block headerImage
+    - const headerImage = ''
+
+block head
+  - css = '/members/style.css'
+  link(rel='preload', as='image', href=`/assets/${headerImage}.webp`)
+  script(type='module', src='/members/script.js')
+
+block content
+  #header(style=`background-image:linear-gradient(to top, var(--base-color), transparent 100px), url('/assets/${headerImage}.webp');`)
+    h1
+      block pageTitle
+        | Placeholder
+  #sections
+    block sections
+    #gallery.section
+    block afterGallery

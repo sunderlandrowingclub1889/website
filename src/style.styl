@@ -1,0 +1,66 @@
+@import '/includes/global.styl'
+
+.link-button
+  background-color: #fff
+  color: #000
+  border-radius: 4px
+  padding: 12px 18px
+  text-decoration: none
+
+#home-header
+  background-image: linear-gradient(to top, var(--base-color), transparent 100px), url('/assets/header_background.webp')
+  background-size: cover
+  background-position: 50% 0%
+  width: 100%
+  height: calc(100vh - var(--nav-bar-height) - 30px)
+  min-height: 720px
+  overflow: hidden
+
+#home-header-text
+  display: flex
+  flex-direction: column
+  justify-content: center
+  margin-left: 10vw
+  max-width: 550px
+  text-align: center
+  height: 100%
+
+  .row
+    margin-top: 3em
+    gap: 16px
+    justify-content: center
+
+  .header-button
+    @extend .link-button
+    position: relative
+    box-shadow: 0 0.1em 0.2em #0008
+    background-color: var(--background-color)
+    color: #fff
+    text-shadow: 0 1px 3px #0008
+    font-size: 1.2em
+    cursor: pointer
+
+    &::before
+      content: ''
+      position: absolute
+      left: -4px
+      top: -4px
+      width: calc(100% + 8px)
+      height: calc(100% + 8px)
+      box-sizing: border-box
+      border: 2px solid #fff
+      border-radius: 8px
+
+#home-logo>svg
+  margin-top: -80px
+  fill: #fff
+  height: @css{min(480px, calc(100vh - var(--nav-bar-height) - 30px))}
+  min-height: 300px
+  filter: drop-shadow(0 1px 2px #0008) drop-shadow(0 0.1em 0.1em #0004)
+
+@import '/includes/page_sections.styl'
+
+@media screen and (max-width: 1000px)
+  .section
+    #twitter-feed
+      display: none
