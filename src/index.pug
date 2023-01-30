@@ -12,15 +12,15 @@ block content
       h1 Under Construction
       p This website is currently under construction.
       h1 Contact
-      //- .row
-      //-   .icon: include /../includes/icons/at.svg
-      //-   | club@example.com
-      .row
-        .icon: include /../includes/icons/phone.svg
-        | 07546 363662
-      .row
-        .icon: include /../includes/icons/map-marker.svg
-        span
-          div Sunderland Rowing Club
-          div Riverside Park, South Hylton
-          div SR4 0RT
+      a.row(href='mailto:contact@sunderlandrowing.co.uk')
+          .footer-icon: include /../includes/icons/at.svg
+          | contact@sunderlandrowing.co.uk
+      a.row(href='tel:07546363662')
+          .footer-icon: include /../includes/icons/phone.svg
+          | 07546 363662
+      a.row.location-row(href='https://goo.gl/maps/uGbUXG5Tvhcs3YoD9')
+          .footer-icon: include /../includes/icons/map-marker.svg
+          span
+            div Sunderland Rowing Club
+            div Riverside Park, South Hylton
+            div SR4 0RT
