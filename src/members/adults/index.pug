@@ -1,0 +1,42 @@
+extends /../includes/members_page.pug
+
+block pageTitle
+  | Adult Training
+
+block headerImage
+  - const headerImage = 'members/adult_header'
+
+block sections
+  .section.row
+    .section-content
+      h1 Placeholder title
+      
+    .section-attachments.important
+      .plan.attachment
+        .plan-name
+            div Seniors
+        .row
+            .plan-price
+              .plan-price-value £20
+              .plan-price-per month
+            .plan-price
+              .plan-price-value £180
+              .plan-price-per year
+      .attachment
+        h2 Coaches
+        img(src='/assets/members/coaches/1.webp')
+        h3 Chris Webb
+        ul
+          li DBS Checked
+          li Level 2 Rowing Coach
+          li First Aid
+          a.row(href="mailto:contact@sunderlandrowing.co.uk")
+            .icon: include /../includes/icons/email.svg
+            | Chris@sunderlandrowing.co.uk
+  .section
+    h1 Senior Traing
+    p Add however many sections you need.
+
+block afterGallery
+  #videos.section
+    .video: <iframe width="560" height="315" src="https://www.youtube.com/embed/ZBMbNOI7kiM" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>

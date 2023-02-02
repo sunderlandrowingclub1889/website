@@ -1,7 +1,7 @@
 extends /../includes/members_page.pug
 
 block pageTitle
-  | Juniors
+  | Junior Training
 
 block headerImage
   - const headerImage = 'members/juniors_header'
@@ -9,23 +9,60 @@ block headerImage
 block sections
   .section.row
     .section-content
-      h1 Junior Training
-      p This should be some info related to the juniors.
-      p Two or three paragraphs would probably be good.
+      h1 A great way to have fun and keep fit!!
+      p Our junior squad is for anyone aged between 10 and 18, our current squad is made up of 40 members. The club aims to introduce rowing to young people both competitvely and socially.  We compete in local and regional regattas and head races. 
+
+      p We offer taster days for juniors during the school holidays about 3 or 4 times per year. These days give the potential rower a chance to have a go at all aspects of rowing (indoor rowing, circuit training as well as getting out on to the water) to see whether it is a sport they may enjoy. The days are good fun and open to all.
+
+      p If you would like to be kept informed of the date of our next taster day, please send a request by email
+
       h1 Training Times
-      p You can have multiple titles in a single section if you want.
+      table
+        tr
+          td Monday
+          td 5:30pm - 6:30pm
+        tr
+          td Tuesday
+          td 5:30pm - 6:30pm
+        tr
+          td Wednesday
+          td 5:30pm - 6:30pm
+        tr
+          td Thursday
+          td 5:30pm - 6:30pm
+        tr
+          td Friday
+          td Rest Day
+        tr
+          td Saturday
+          td Tide-dependent 10am
+        tr
+          td Sunday
+          td Tide-dependent 10am
+
     .section-attachments.important
       .plan.attachment
-        .plan-name Junior Training
-        .plan-price
-          .plan-price-value £150
-          .plan-price-per annually
+        .plan-name
+            div Junior
+            div Ages 10-18
+        .row
+            .plan-price
+              .plan-price-value £15
+              .plan-price-per month
+            .plan-price
+              .plan-price-value £150
+              .plan-price-per year
       .attachment
         h2 Coaches
-        .center: img(src='/assets/members/coaches/1.webp')
-        h3 Sarah Hodgos
+        img(src='/assets/members/coaches/1.webp')
+        h3 Sarah Hodge
         ul
+          li DBS Checked
           li Level 2 Rowing Coach
+          li First Aid
+        a.attachment-button(href="mailto:contact@sunderlandrowing.co.uk")
+          .icon: include /../includes/icons/email.svg
+          | sarah@sunderlandrowing.co.uk
   .section
     h1 How to join!
     p Add however many sections you need.
