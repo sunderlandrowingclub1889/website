@@ -8,9 +8,38 @@
   img
     display: block
 
-.section iframe
-  border: 8px solid #fff !important
-  border-radius: 4px
+.section
+  iframe
+    border: 8px solid #fff !important
+    border-radius: 4px
+  
+  .section-split
+    display: flex
+    flex-direction: row-reverse
+    align-items: stretch
+    width: 100%
+    
+    @media screen and (max-width: 1000px)
+      flex-direction: column
+      
+    &>:nth-child(2)
+      max-width: 100%
+
+#form
+  width: calc(50% + 180px)
+  min-width: 445px
+  min-height: 500px
+  border: none !important
+  background-color: #fff
+  margin: -20px -120px -60px 60px
+  border-top-left-radius: 0
+  border-bottom-left-radius: 0
+
+  @media screen and (max-width: 1000px)
+    width: calc(100% + 40px)
+    margin: -20px -20px 0
+    border-top-left-radius: 4px
+    border-bottom-right-radius: 0
 
 #gallery, #videos
   display: grid
@@ -75,7 +104,7 @@
       height: 360px
 
 #videos
-  grid-template-columns: repeat(auto-fill, minmax(560px, 1fr))
+  grid-template-columns: @css{repeat(auto-fill, minmax(min(100%, 560px), 1fr))}
 
 @keyframes fadeIn
   from

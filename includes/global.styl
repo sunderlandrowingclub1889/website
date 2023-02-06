@@ -7,8 +7,9 @@
 
 body
   --nav-bar-height: 80px
-  --base-color: #004aad
-  --background-color: #38b6ff
+  --base-color: #055C9D
+  --background-color: #0E86D4
+  --secondary-background-color: #68BBE3
   background-color: var(--base-color)
   color: #fff
   font-family: 'Noto Sans', Arial, sans-serif
@@ -84,6 +85,7 @@ body
       color: #000
       text-decoration: none
       border: 2px solid #fff
+      white-space: nowrap
     
       &:hover
         background-color: var(--background-color)
@@ -130,7 +132,7 @@ body
     display: flex
     align-items: center
     color: #000
-    fill: currentColor
+    fill: currentcolor
     padding: 10px
     margin: -10px 0
     
@@ -149,6 +151,10 @@ body
   display: flex
   align-items: center
   gap: 30px
+  
+  a
+    text-decoration: none
+    color: inherit
 
 #footer-social
   display: flex
@@ -173,7 +179,7 @@ body
   
   position: relative
   &::after
-    content: '[WORK IN PROGRESS]'
+    content: '[PREVIEW]'
     font-size: 0.6em
     position: absolute
     bottom: 4px
@@ -182,7 +188,7 @@ body
     font-weight: 700
 
 #nav-logo>svg
-  fill: currentColor
+  fill: currentcolor
   height: calc(var(--nav-bar-height) - 24px)
   margin-right: 10px
   margin-left: -10px
@@ -243,6 +249,9 @@ body
   
   &[data-list-visible]>.menu-icon
     display: none
+
+table td:not(:last-child)
+  border-right: 12px solid transparent
 
 @media screen and (min-width: 1001px)
   #nav-list

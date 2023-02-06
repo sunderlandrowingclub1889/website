@@ -26,7 +26,13 @@
 
   p
     font-size: 1.25em
-  
+    
+    a
+      color: #fff
+    
+  li 
+    font-size: 1.25em
+    
   #twitter-feed
     margin-top: 1.675em
     margin-right: -180px
@@ -66,17 +72,56 @@
       ul
         margin-top: 0.5em
         font-size: 20px
+        
+      .attachment-button
+        display: flex
+        align-items: center
+        text-decoration: none
+        color: #000
+        gap: 10px
+        padding: 12px 18px
+        margin: 0 -18px
+        
+        &>.icon>svg
+          display: block
+          width: 24px
+          height: 24px
+          fill: currentcolor
+        
+        &:hover
+          color: #fff
+          background-color: #68BBE3
     
     .plan
-      display: flex
-      align-items: center
-      gap: 1em
+      overflow: hidden
+      min-width: 300px
+      box-sizing: border-box
+      text-decoration: none
+
+      .row
+        justify-content: space-around
+        gap: 30px
 
       .plan-name
-        font-size: 1.5em
+        font-size: 1.2em
         white-space: nowrap
-        flex: 1
-      
+        display: flex
+        justify-content: space-between
+        align-items: center
+        background-color: var(--secondary-background-color)
+        margin: -12px -18px 0
+        padding: 4px 8px
+        color: #fff
+        text-shadow: 1px 1px 1px #000
+        
+        &>:not(:first-child)
+          font-size: 0.8em
+
+      .plan-price
+        display: flex
+        flex-direction: column
+        align-items: center
+
       .plan-price-value
         font-size: 2em
       
