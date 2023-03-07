@@ -1,6 +1,19 @@
 @import '/includes/global.styl'
 @import '/includes/page_sections.styl'
 
+.section p
+  font-size: 1.1em
+
+.section-attachments>iframe
+  border: 8px solid #fff
+  border-radius: 4px
+  min-width: 600px
+  min-height: 450px
+  background-color: #fff
+  
+  &:not([src])
+    display: none
+
 #date
   font-size: 24px
 

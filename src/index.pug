@@ -8,19 +8,86 @@ block content
   #home-header
     #home-header-text
       #home-logo: include /../includes/icons/logo.svg
-    #info
-      h1 Under Construction
-      p This website is currently under construction.
-      h1 Contact
-      a.row(href='mailto:contact@sunderlandrowing.co.uk')
-          .footer-icon: include /../includes/icons/email.svg
+      .row
+        a#join-us-button.header-button Join us
+  #sections
+    .section.row
+      .section-content
+        h1 Sunderland Rowing Club
+        p If you're an experienced rower recently moved to sunderland, we'd love to get you in a boat. Come and join us take part in one of Great Britain's most successful sports in a friendly environment. 
+        p Open to a wide range of ages and physical abilities, the club caters for people who have never picked up an oar all the way to those looking to race at Henley Royal Regatta and British Championships. 
+        p Don't wait, come see what it's all about!
+        br
+        a.link-button(href='') Learn more
+      #twitter-feed
+        <a class="twitter-timeline" data-width="450" data-height="400" data-dnt="true" data-theme="light" href="https://twitter.com/Sunderland_RC?ref_src=twsrc%5Etfw"></a> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+    .section.row
+      #join-us-section.scroll-stop
+      .section-content
+        h1 Join the club
+        p if you'd like to join our friendly and welcoming club then please click on the cards to learn more.
+
+        p The junior squad is for anyone aged between 10 and 18, club aims to introduce rowing to young people both competitvely and socially. We compete in local and regional regattas and head races.
+        //- a.link-button(href='https://forms.gle/ESa99AnK78Rc5Yjv5') Junior Membership form 2023
+
+        p The senior / masters squad is for those who have some experience rowing or sculling and who wish to be an active member of the our club
+        //- a.link-button(href='https://forms.gle/3Gg4ToN6iR5uCAiV8') Adults Membership form 2023
+
+      .section-attachments
+        a.plan.attachment(href='/members/adults')
+          .plan-name Adults
+          .row
+            .plan-price
+              .plan-price-value £20
+              .plan-price-per month
+            .plan-price
+              .plan-price-value £180
+              .plan-price-per year
+        a.plan.attachment(href='/members/juniors')
+          .plan-name
+            div Juniors
+            div Ages 10-18
+          .row
+            .plan-price
+              .plan-price-value £15
+              .plan-price-per month
+            .plan-price
+              .plan-price-value £150
+              .plan-price-per year
+        a.plan.attachment(href='/members/recreational')
+          .plan-name Recreational
+          .row
+            .plan-price
+              .plan-price-value £10
+              .plan-price-per month
+            .plan-price
+              .plan-price-value £100
+              .plan-price-per year
+        a.plan.attachment(href='/members/students')
+          .plan-name Student
+          .row
+            .plan-price
+              .plan-price-value £5
+              .plan-price-per month
+            .plan-price
+              .plan-price-value £50
+              .plan-price-per year
+    .section
+      h1 Learn to row
+      p Sunderland Rowing Club runs a learn to row courses during the year. The courses typically consist of 8 sessions of 2 hours where our volunteer coaches will take you through the basics of rowing technique. When you complete the course, you will then be able to decide whether to take up the sport competitively and join one of the training squads or you might decide to concentrate on the more sociable aspects of rowing
+      br
+      a.link-button(href='/members/learn') Learn more
+    
+    .section
+      .section-content
+        p Sunderland Boat Club House Expansion
+        p we are looking into the possibility of expanding the Boathouse for the future and we require funding to achieve this goal. If you are interested in making a donation, no matter how big or small, please donte to our justgiving page or get in touch by emailing us.
+        div: a.row(href="mailto:contact@sunderlandrowing.co.uk")
+          .icon: include /../includes/icons/email.svg
           | contact@sunderlandrowing.co.uk
-      a.row(href='tel:07546363662')
-          .footer-icon: include /../includes/icons/phone.svg
-          | 07546 363662
-      a.row.location-row(href='https://goo.gl/maps/uGbUXG5Tvhcs3YoD9')
-          .footer-icon: include /../includes/icons/map-marker.svg
-          span
-            div Sunderland Rowing Club
-            div Riverside Park, South Hylton
-            div SR4 0RT
+      //- .section-attachments.important
+      //-   a(href='https://www.justgiving.com/crowdfunding/sunderlandrowingclubhouse', target='_blank', rel='noopener'): img(data-src='/assets/sponsors/justgiving.webp')
+
+    .section
+      h1 Sunderland Tide Times
+      <script id="tide-widget-script" type="text/javascript" onload="createTideInstance('tidewidget__242', { includeMap: false, includeTitle: false, includeStyles: true, numberDays: 5 })" src="https://tides.today/en/c/england/tyne-and-wear/sunderland/widget.js" async></script><div id="tidewidget__242"></div>

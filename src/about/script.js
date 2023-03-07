@@ -84,6 +84,9 @@ if (allImages.length) {
       }
       scroller.append(img)
       i = ++i % images.length
+      if (images.length === 1) {
+        break
+      }
       await wait(5000)
     } catch {}
   })

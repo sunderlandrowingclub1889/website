@@ -4,6 +4,7 @@ import crypto from 'node:crypto'
 
 import sharp from 'sharp'
 import { DateTime } from 'luxon'
+import { marked } from 'marked'
 
 async function* getFiles(dir) {
   const dirents = await fs.promises.readdir(dir, { withFileTypes: true })
@@ -17,6 +18,13 @@ async function* getFiles(dir) {
   }
 }
 
+const thumbnailOptions = {
+  width: 640,
+  height: 640,
+  fit: 'inside',
+  withoutEnlargement: true
+}
+
 const reImageExts = /\.(?:png|jpe?g|gif|webp)$/
 const reEventDate = /^Date:\s*/i
 const reEventTime = /^Time:\s*/i
@@ -25,6 +33,7 @@ const reEventEnds = /^Ends:\s*/i
 const reEventName = /^Name:\s*/i
 const reEventImage = /^Image:\s*/i
 const reEventColor = /^Colou?r:\s*/i
+const reEventLocation = /^Location:\s*/i
 
 const recursMap = {
   daily: 'd',
@@ -69,6 +78,7 @@ async function processEvent(file) {
       name,
       image,
       color,
+      location,
       desc
   for (let i = 0; i < lines.length; i++) {
     if (typeof desc !== 'undefined') {
@@ -87,6 +97,8 @@ async function processEvent(file) {
       image = lines[i].replace(reEventImage, '').trim()
     } else if (reEventColor.test(lines[i])) {
       color = lines[i].replace(reEventColor, '').trim()
+    } else if (reEventLocation.test(lines[i])) {
+      location = lines[i].replace(reEventLocation, '').trim()
     } else if (typeof desc === 'undefined' && lines[i] === '---') {
       desc = []
     }
@@ -103,8 +115,11 @@ async function processEvent(file) {
     if (typeof color !== 'undefined') {
       event.color = color
     }
-    if ((typeof desc !== 'undefined') && desc.length) {
-      event.desc = desc.join('\n').trim()
+    if (typeof location !== 'undefined') {
+      event.location = location
+    }
+    if ((typeof desc !== 'undefined') && desc.join('\n').trim().length) {
+      event.desc = marked.parse(desc.join('\n').trim())
     }
     return [hash, event]
   } else { // Recurring event
@@ -125,8 +140,11 @@ async function processEvent(file) {
     if (typeof color !== 'undefined') {
       event.color = color
     }
-    if ((typeof desc !== 'undefined') && desc.length) {
-      event.desc = desc.join('\n').trim()
+    if (typeof location !== 'undefined') {
+      event.location = location
+    }
+    if ((typeof desc !== 'undefined') && desc.join('\n').trim().length) {
+      event.desc = marked.parse(desc.join('\n').trim())
     }
     return [hash, event]
   }
@@ -138,10 +156,21 @@ export default {
     for await (const file of getFiles('images')) {
       if (!reImageExts.test(file)) continue;
       try {
-        const outFile = path.resolve(path.join('dist/assets', path.relative('images', path.dirname(file)), path.basename(file, path.extname(file)) + '.webp'))
-        fs.mkdirSync(path.dirname(outFile), { recursive: true })
-        await sharp(file).webp({ quality: 90 }).toFile(outFile)
-        images.push(path.relative('dist/assets', outFile).replace(/\\/g, '/'))
+        const img = sharp(file)
+        const outPath = path.join(path.relative('images', path.dirname(file)), path.basename(file, path.extname(file)) + '.webp')
+
+        { // Full-size version of the image
+          const outFull = path.resolve(path.join('dist/assets', outPath))
+          fs.mkdirSync(path.dirname(outFull), { recursive: true })
+          await img.clone().webp({ quality: 90 }).toFile(outFull)
+          images.push(path.relative('dist/assets', outFull).replace(/\\/g, '/'))
+        }
+
+        { // Smaller version of the image
+          const outFull = path.resolve(path.join('dist/assets/thumbnails', outPath))
+          fs.mkdirSync(path.dirname(outFull), { recursive: true })
+          await img.resize(thumbnailOptions).webp({ quality: 80 }).toFile(outFull)
+        }
       } catch {
         // If the image can't be converted, it might be corrupt, so just ignore it
       }
@@ -158,6 +187,26 @@ export default {
     await fs.promises.writeFile('dist/assets/events.json', JSON.stringify(Object.fromEntries(events)), 'utf-8')
   },
   serveFile: [
+    { match: /\/assets\/thumbnails\/.*\.webp$/,
+      async process(filename, config, tools) {
+        if (fs.existsSync(filename)) {
+          return [
+            await fs.promises.readFile(filename),
+            'image/webp'
+          ]
+        } else {
+          const imagesFileNoExt = path.join('images', filename.replace(/^src\/assets\/thumbnails\//, '')).slice(0, -5)
+          for await (const file of getFiles(path.dirname(imagesFileNoExt))) {
+            if (imagesFileNoExt === path.relative('.', path.join(path.dirname(file), path.basename(file, path.extname(file))))) {
+              return [
+                await sharp(file).resize(thumbnailOptions).webp({ quality: 80 }).toBuffer(),
+                'image/webp'
+              ]
+            }
+          }
+        }
+      }
+    },
     { match: /\.webp$/,
       async process(filename, config, tools) {
         if (fs.existsSync(filename)) {

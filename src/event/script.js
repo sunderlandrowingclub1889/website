@@ -89,8 +89,9 @@ if ('recurs' in event && (!occursOn(event, date) || event.date.getHours() !== da
 
 $('#header').css('background-image', `linear-gradient(to top, var(--base-color), transparent 100px), url('/assets/events/${event.image}.webp')`)
 $('#title').text(event.name)
-$('#description').text(event.desc ?? '')
+$('#description').html(event.desc ?? '')
 $('#date').empty().append(
   E('div').text(new Intl.DateTimeFormat('en-GB', { dateStyle: 'full' }).format(event.date)),
   E('div').text(new Intl.DateTimeFormat('en-GB', { timeStyle: 'short', hour12: true }).format(event.date))
 )
+$('#location').attr('src', event.location)
