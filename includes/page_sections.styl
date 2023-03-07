@@ -8,6 +8,7 @@
   margin-bottom: 120px
 
 .section
+  position: relative
   background-color: var(--background-color)
   width: @css{min(calc(100% - 120px), 1460px)}
   min-width: 660px
@@ -17,6 +18,10 @@
   border-radius: 4px
   box-shadow: 0 4px 16px #0004
   box-sizing: border-box
+
+  &>.scroll-stop:first-child
+    position: absolute
+    top: calc(-1 * var(--nav-bar-height) - 30px)
 
   &.row>:first-child
     flex: 1
@@ -124,9 +129,12 @@
 
       .plan-price-value
         font-size: 2em
-      
+
       .plan-price-per::before
         content: '/ '
+
+    a.plan:hover
+      background-color: #e9f8ff
 
   .sub-section
     display: flex

@@ -1,5 +1,0 @@
-Date: Jan 17, 2023
-Time: 16:00
-Name: Placeholder 1
-Image: example_event
-Colour: tournament

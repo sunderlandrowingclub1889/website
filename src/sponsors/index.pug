@@ -5,6 +5,9 @@ append html
 
 block head
   - css = '/sponsors/style.css'
+  - desc = ''
+  - image = ``
+
   link(rel='preload', as='image', href=`/assets/${headerImage}.webp`)
   script(type='module', src='/sponsors/script.js')
 
@@ -15,36 +18,83 @@ block content
     .section
       .sub-section
         .section-content
-          h1 Donations
-          p Any amount is welcome
+          h1 Sunderland Boat Club House Expansion
+          p we are looking into If you want to help with our redevelopment please donate on our justgiving page
         .section-attachments.important
-          a(href='https://www.justgiving.com/crowdfunding/sunderlandrowingclubhouse', target='_blank', rel='noopener'): img(data-src='/assets/sponsors/qr.webp')
+          a(href='https://www.justgiving.com/crowdfunding/sunderlandrowingclubhouse', target='_blank', rel='noopener'): img(data-src='/assets/sponsors/justgiving.webp')
+            
+
+    .section
       .sub-section
         .section-content
-          h1 Donations
-          p Any amount is welcome
-        .section-attachments.important
-          a(href='https://www.justgiving.com/crowdfunding/sunderlandrowingclubhouse', target='_blank', rel='noopener'): img(data-src='/assets/sponsors/qr.webp')
+          h1 Sponsoring is good for you and good for us.
+
+          p With your organisation’s support, we can build on our success, offer better opportunities to our members and greater accessibility to rowing to more people in Sunderland. We can continue our work with local schools, encouraging children to participate in sport and promote an active and healthy lifestyle across Sunderland.
+
+          h1 How you could support us
+          ul
+            li £30,000: eight boat
+            li £15,000: four boat
+            li £12:000: double boat
+            li £8,000: single boat
+            li £7,500: a new safety boat
+            li £3,200: a set of eight oars
+            li £900: a new rowing machine
+            li £150 for a rigger
+            li £100 for a seat
+
+          h1 Sponsorship
+          p We have three levels of sponsorship
+            ul
+              li Gold: £7.5k+
+              li Silver: £2.5k to £7.5k
+              li Bronze: up to £2.5k
+
+          h1 What your sponsorship could buy
+
+          p visitors and locals who watch our boats rowing down the river wear, seven days a week. We also tow our boats along some of England’s busiest roads. We compete on rivers and lakes in big events, .
+
+          p By sponsoring us, you’re with us every step of the way:
+          ul
+            li Your name and logo on our website
+            li Promotion of your brand on our social media channels
+            li Your name on our boats, our trailer, our launch
+            li Your name on our boats during Regattas’ YouTube race coverage
+            li Your name and logo on our racing kit and training clothing
+            li Your name and logo on boards and promotional material at our events
+
+          p Make a massive difference. Talk to the treasurer about how you and/or your organisation can support rowing in Sunderland
+          
+
+    
     #sponsors.section
       a(href='https://example.com/sponsor', target='_blank', rel='noopener'): img(data-src='/assets/sponsors/example.webp')
       a(href='https://example.com/sponsor', target='_blank', rel='noopener'): img(data-src='/assets/sponsors/example.webp')
       a(href='https://example.com/sponsor', target='_blank', rel='noopener'): img(data-src='/assets/sponsors/example.webp')
-      a(href='https://example.com/sponsor', target='_blank', rel='noopener'): img(data-src='/assets/sponsors/example.webp')
-      a(href='https://example.com/sponsor', target='_blank', rel='noopener'): img(data-src='/assets/sponsors/example.webp')
-      a(href='https://example.com/sponsor', target='_blank', rel='noopener'): img(data-src='/assets/sponsors/example.webp')
-      a(href='https://example.com/sponsor', target='_blank', rel='noopener'): img(data-src='/assets/sponsors/example.webp')
-      a(href='https://example.com/sponsor', target='_blank', rel='noopener'): img(data-src='/assets/sponsors/example.webp')
-      a(href='https://example.com/sponsor', target='_blank', rel='noopener'): img(data-src='/assets/sponsors/example.webp')
-      a(href='https://example.com/sponsor', target='_blank', rel='noopener'): img(data-src='/assets/sponsors/example.webp')
-    .section.row
-      .section-content
-        h1 Example Sponsorship 1
-        p Some information about this sponsorship, like what exactly the club got from it.
-      .section-attachments.important
-        a(href='https://example.com/sponsor', target='_blank', rel='noopener'): img(data-src='/assets/sponsors/example.webp')
-    .section.row
-      .section-content
-        h1 Example Sponsorship 2
-        p Add as many of these sections as you want.
-      .section-attachments.important
-        a(href='https://example.com/sponsor', target='_blank', rel='noopener'): img(data-src='/assets/sponsors/example.webp')
+
+    #crowdfunding.section.row
+      .section-tile
+        a(href='https://www.justgiving.com/crowdfunding/sunderlandrowingclub?utm_id=107&utm_term=3jxD2ZXB5&fbclid=IwAR1kNEHEa_dtqI0TgiF3r0vEvbQ3p7dU6C8H2uYyEi5IZUvaSEyR9FvtHMg', target='_blank', rel='noopener'): img(data-src='/assets/sponsors/justgiving.webp')
+        div
+          p 23rd December 2022
+          h3 Weʼve raised £563 to support the purchase of a new boat!
+          p Special thank you Martin Murphy for raising money for the club.
+
+      .section-tile
+        a(href='https://www.justgiving.com/crowdfunding/csrc?utm_id=66&utm_term=EEegaenAJ', target='_blank', rel='noopener'): img(data-src='/assets/sponsors/justgiving.webp')
+        div
+          p 21st December 2019
+          h3 Weʼve raised £150 to help fund equipment!
+          p Special thank you to Carrie Richardson and Graham Ord for raising money for the club.
+
+      .section-tile
+        a(href='https://www.justgiving.com/crowdfunding/csrc?utm_id=66&utm_term=EEegaenAJ', target='_blank', rel='noopener'): img(data-src='/assets/sponsors/justgiving.webp')
+        div
+          p 21st December 2019
+          h3 Weʼve raised £225 to help fund for boat refurbishments!
+          p Special thank you to Sarah Hodge for raising money for the club.
+
+      //-   h1 Example Sponsorship 1
+      //-   p Some information about this sponsorship, like what exactly the club got from it.
+      //- .section-attachments.important
+      //-   a(href='https://example.com/sponsor', target='_blank', rel='noopener'): img(data-src='/assets/sponsors/example.webp')
