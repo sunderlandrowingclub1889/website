@@ -6,9 +6,14 @@
   border-radius: 4px
   padding: 12px 18px
   text-decoration: none
+  &:hover
+    background-color: var(--secondary-background-color)
 
 #info
   margin: 0 30px
+  &>iframe
+    margin-top: 20px
+    border-radius: 4px
   
 #info-section
   display: flex
@@ -46,8 +51,9 @@
     font-size: 2em
     
   @media screen and (max-width: 1000px)
-    max-width: calc(100vw - 140px)
-    min-width: calc(100vw - 140px)
+    max-width: calc(100vw - 160px)
+    min-width: calc(100vw - 160px)
+    // margin-right: 20px
     
     &>.event-button-name
       font-size: 1.5em
