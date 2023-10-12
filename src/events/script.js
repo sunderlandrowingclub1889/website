@@ -88,118 +88,123 @@ function getNextOccurrence(event, date = new Date) {
 }
 
 function getEventLink(event, date) {
-  return `/event?id=${event.id}${'recurs' in event ? `&d=${(date ?? getNextOccurrence(event)).valueOf() / 1000}` : ''}`
-}
-
-class EventCalendar extends HTMLElement {
-  #events
-  #recurringEvents
-
-  constructor(year, month) {
-    super()
-    this.#events = {}
-    this.#recurringEvents = []
-    this.attachShadow({ mode: 'open' })
-    E('style').append(_stylf`/includes/components/calendar.styl`).appendTo(this.shadowRoot)
-    this.monthNameDisplay = E('div').addClass('month-name-display')
-    E('div').addClass('nav-bar').append(
-      this.monthNameDisplay,
-      E('button').addClass('prev-month-button').append($('#chevron-left-icon')[0].content.cloneNode(true), 'Previous month').on('click', evt => this.prevMonth()),
-      E('button').addClass('next-month-button').append('Next month', $('#chevron-right-icon')[0].content.cloneNode(true)).on('click', evt => this.nextMonth())
-    ).appendTo(this.shadowRoot)
-    this.grid = E('div').addClass('day-grid').appendTo(this.shadowRoot)
-
-    /*
-      Setting the first argument to false should disable the automatic refresh here
-    */
-    if (year !== false) {
-      this.setMonth(year, month)
-    }
-  }
-
-  setMonth(year, month) {
-    if (month === -1) {
-      year--
-      month = 11
-    } else if (month === 12) {
-      year++
-      month = 0
-    }
-    this.monthDate = new Date(year, month)
-    const d = new Date(year, month), todayIndex = getDateIndex(new Date)
-    this.grid.empty().append(
-      dayNames.map(e => E('div').addClass('day-name').text(e))
-    )
-    for (let i = 1 - d.getDay() > 0 ? -6 - d.getDay() : 1 - d.getDay(), j = 0; j < 42; i++, j++) {
-      const e = new Date(d)
-      e.setDate(d.getDate() + i)
-      const dateIndex = getDateIndex(e)
-      let dateEl
-      this.grid.append(
-        dateEl = E('div').addClass([
-          'date',
-          e.getMonth() === month ? '' : 'off-month',
-          dateIndex === todayIndex ? 'today' : ''
-        ]).attr('data-date', e.getDate())
-      )
-      const events = []
-      if (dateIndex in this.#events) {
-        events.push(...this.#events[dateIndex])
-      }
-      for (const event of this.#recurringEvents) if (occursOn(event, e)) {
-        events.push(event)
-      }
-      if (events.length) {
-        events.sort((a, b) => getNextOccurrence(a, e) - getNextOccurrence(b, e))
-        dateEl.append(E('ul').addClass('events-list').append(
-          events.map(event => {
-            const date = new Date(e)
-            date.setHours(event.date.getHours())
-            date.setMinutes(event.date.getMinutes())
-            return E('li').append(
-              E('a')
-                .addClass('event')
-                .attr('href', getEventLink(event, date))
-                .css('--event-color', 'color' in event ? `var(--event-color-${event.color})` : '#fff')
-                .text(event.name)
-            )
-          })
-        ))
-      }
-    }
-    this.monthNameDisplay.text(`${monthNames[month]} ${year}`)
-  }
-
-  nextMonth() {
-    this.setMonth(this.monthDate.getFullYear(), this.monthDate.getMonth() + 1)
-  }
-
-  prevMonth() {
-    this.setMonth(this.monthDate.getFullYear(), this.monthDate.getMonth() - 1)
-  }
-
-  refresh() {
-    this.setMonth(this.monthDate.getFullYear(), this.monthDate.getMonth())
-  }
-
-  addEvent(event, refresh = true) {
-    if ('recurs' in event) {
-      this.#recurringEvents.push(event)
-    } else {
-      const dateIndex = getDateIndex(event.date)
-      const events = this.#events[dateIndex] ??= []
-      events.push(event)
-    }
-    if (refresh) {
-      this.refresh()
-    }
+  console.log(event)
+  if ('link' in event) {
+    return event.link
+  } else {
+    return `/event?id=${event.id}${'recurs' in event ? `&d=${(date ?? getNextOccurrence(event)).valueOf() / 1000}` : ''}`
   }
 }
 
-customElements.define('event-calendar', EventCalendar)
+// class EventCalendar extends HTMLElement {
+//   #events
+//   #recurringEvents
 
-const calendar = new EventCalendar(false)
-$('#calendar').append(calendar)
+//   constructor(year, month) {
+//     super()
+//     this.#events = {}
+//     this.#recurringEvents = []
+//     this.attachShadow({ mode: 'open' })
+//     E('style').append(_stylf`/includes/components/calendar.styl`).appendTo(this.shadowRoot)
+//     this.monthNameDisplay = E('div').addClass('month-name-display')
+//     E('div').addClass('nav-bar').append(
+//       this.monthNameDisplay,
+//       E('button').addClass('prev-month-button').append($('#chevron-left-icon')[0].content.cloneNode(true), 'Previous month').on('click', evt => this.prevMonth()),
+//       E('button').addClass('next-month-button').append('Next month', $('#chevron-right-icon')[0].content.cloneNode(true)).on('click', evt => this.nextMonth())
+//     ).appendTo(this.shadowRoot)
+//     this.grid = E('div').addClass('day-grid').appendTo(this.shadowRoot)
+
+//     /*
+//       Setting the first argument to false should disable the automatic refresh here
+//     */
+//     if (year !== false) {
+//       this.setMonth(year, month)
+//     }
+//   }
+
+//   setMonth(year, month) {
+//     if (month === -1) {
+//       year--
+//       month = 11
+//     } else if (month === 12) {
+//       year++
+//       month = 0
+//     }
+//     this.monthDate = new Date(year, month)
+//     const d = new Date(year, month), todayIndex = getDateIndex(new Date)
+//     this.grid.empty().append(
+//       dayNames.map(e => E('div').addClass('day-name').text(e))
+//     )
+//     for (let i = 1 - d.getDay() > 0 ? -6 - d.getDay() : 1 - d.getDay(), j = 0; j < 42; i++, j++) {
+//       const e = new Date(d)
+//       e.setDate(d.getDate() + i)
+//       const dateIndex = getDateIndex(e)
+//       let dateEl
+//       this.grid.append(
+//         dateEl = E('div').addClass([
+//           'date',
+//           e.getMonth() === month ? '' : 'off-month',
+//           dateIndex === todayIndex ? 'today' : ''
+//         ]).attr('data-date', e.getDate())
+//       )
+//       const events = []
+//       if (dateIndex in this.#events) {
+//         events.push(...this.#events[dateIndex])
+//       }
+//       for (const event of this.#recurringEvents) if (occursOn(event, e)) {
+//         events.push(event)
+//       }
+//       if (events.length) {
+//         events.sort((a, b) => getNextOccurrence(a, e) - getNextOccurrence(b, e))
+//         dateEl.append(E('ul').addClass('events-list').append(
+//           events.map(event => {
+//             const date = new Date(e)
+//             date.setHours(event.date.getHours())
+//             date.setMinutes(event.date.getMinutes())
+//             return E('li').append(
+//               E('a')
+//                 .addClass('event')
+//                 .attr('href', getEventLink(event, date))
+//                 .css('--event-color', 'color' in event ? `var(--event-color-${event.color})` : '#fff')
+//                 .text(event.name)
+//             )
+//           })
+//         ))
+//       }
+//     }
+//     this.monthNameDisplay.text(`${monthNames[month]} ${year}`)
+//   }
+
+//   nextMonth() {
+//     this.setMonth(this.monthDate.getFullYear(), this.monthDate.getMonth() + 1)
+//   }
+
+//   prevMonth() {
+//     this.setMonth(this.monthDate.getFullYear(), this.monthDate.getMonth() - 1)
+//   }
+
+//   refresh() {
+//     this.setMonth(this.monthDate.getFullYear(), this.monthDate.getMonth())
+//   }
+
+//   addEvent(event, refresh = true) {
+//     if ('recurs' in event) {
+//       this.#recurringEvents.push(event)
+//     } else {
+//       const dateIndex = getDateIndex(event.date)
+//       const events = this.#events[dateIndex] ??= []
+//       events.push(event)
+//     }
+//     if (refresh) {
+//       this.refresh()
+//     }
+//   }
+// }
+
+// customElements.define('event-calendar', EventCalendar)
+
+// const calendar = new EventCalendar(false)
+// $('#calendar').append(calendar)
 
 const events = Object.entries(await fetch('/assets/events.json').then(e => e.json())).map(([id, event]) => {
   event.id = id
@@ -223,11 +228,11 @@ const events = Object.entries(await fetch('/assets/events.json').then(e => e.jso
     }
     event.date = getNextOccurrence(event)
   }
-  calendar.addEvent(event, false)
+  // calendar.addEvent(event, false)
   return event
 }).sort((a, b) => a.date - b.date)
 const now = new Date
-calendar.setMonth(now.getFullYear(), now.getMonth())
+// calendar.setMonth(now.getFullYear(), now.getMonth())
 
 // Filter out recurring and past events, sort them by date, and get the first three
 for (const event of events.filter(e => e.date - now >= 0).sort((a, b) => a.date - b.date).slice(0, 3)) {

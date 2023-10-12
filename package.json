@@ -20,6 +20,6 @@
     "luxon": "^3.2.1",
     "marked": "^4.2.12",
     "sharp": "^0.31.3",
-    "webbuilder": "github:EvenTorset/WebBuilder#6ff2c061688e72cb57c72a969d1d8d4f501ca7a2"
+    "webbuilder": "github:EvenTorset/WebBuilder#8e0bf687331ee0ed1e2e564953abe737361a5f15"
   }
 }

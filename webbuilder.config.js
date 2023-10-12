@@ -34,6 +34,7 @@ const reEventName = /^Name:\s*/i
 const reEventImage = /^Image:\s*/i
 const reEventColor = /^Colou?r:\s*/i
 const reEventLocation = /^Location:\s*/i
+const reEventLink = /^Link:\s*/i
 
 const recursMap = {
   daily: 'd',
@@ -79,6 +80,7 @@ async function processEvent(file) {
       image,
       color,
       location,
+      link,
       desc
   for (let i = 0; i < lines.length; i++) {
     if (typeof desc !== 'undefined') {
@@ -99,6 +101,8 @@ async function processEvent(file) {
       color = lines[i].replace(reEventColor, '').trim()
     } else if (reEventLocation.test(lines[i])) {
       location = lines[i].replace(reEventLocation, '').trim()
+    } else if (reEventLink.test(lines[i])) {
+      link = lines[i].replace(reEventLink, '').trim()
     } else if (typeof desc === 'undefined' && lines[i] === '---') {
       desc = []
     }
@@ -117,6 +121,9 @@ async function processEvent(file) {
     }
     if (typeof location !== 'undefined') {
       event.location = location
+    }
+    if (typeof link !== 'undefined') {
+      event.link = link
     }
     if ((typeof desc !== 'undefined') && desc.join('\n').trim().length) {
       event.desc = marked.parse(desc.join('\n').trim())
@@ -142,6 +149,9 @@ async function processEvent(file) {
     }
     if (typeof location !== 'undefined') {
       event.location = location
+    }
+    if (typeof link !== 'undefined') {
+      event.link = link
     }
     if ((typeof desc !== 'undefined') && desc.join('\n').trim().length) {
       event.desc = marked.parse(desc.join('\n').trim())
