@@ -122,10 +122,11 @@ block content
           br
           a.link-button(href='https://www.easyfundraising.org.uk/causes/sunderlandrowingclub/') Easyfundraising Club Page
 
-        .section-attachments.important
-          a(href='https://www.easyfundraising.org.uk/causes/sunderlandrowingclub/', target='_blank', rel='noopener')
-            img(data-src='/assets/support/easyfundraising.webp')
-            #easyfundraising-info £#[span#easyfundraising-total -] from #[span#easyfundraising-supporters n/a] supporters
+        .section-attachments.important.qr
+          .row.attachment
+            a(href='https://www.easyfundraising.org.uk/causes/sunderlandrowingclub/', target='_blank', rel='noopener'): img(data-src='/assets/support/easyfundraising.webp')
+            a(href='https://www.easyfundraising.org.uk/causes/sunderlandrowingclub/', target='_blank', rel='noopener'): img(data-src='/assets/support/easyfundraising-qr.webp', height=260)
+          #easyfundraising-info £#[span#easyfundraising-total -] from #[span#easyfundraising-supporters n/a] supporters
 
     #sponsors.section
       a(href='https://merkurgroupuk.co.uk/', target='_blank', rel='noopener'): img(data-src='/assets/support/merkurgroupuk.webp')
