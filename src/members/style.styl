@@ -202,3 +202,24 @@
   border-radius: 4px
   box-shadow: 0 4px 16px #0004
   box-sizing: border-box
+
+.header-button
+    @extend .link-button
+    position: relative
+    box-shadow: 0 0.1em 0.2em #0008
+    background-color: var(--background-color)
+    color: #fff
+    text-shadow: 0 1px 3px #0008
+    font-size: 1.2em
+    cursor: pointer
+
+    &::before
+      content: ''
+      position: absolute
+      left: -4px
+      top: -4px
+      width: calc(100% + 8px)
+      height: calc(100% + 8px)
+      box-sizing: border-box
+      border: 2px solid #fff
+      border-radius: 8px
