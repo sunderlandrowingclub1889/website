@@ -7,7 +7,7 @@ block html
 
 block head
   - css = '/members/style.css'
-  title= webPageName
+  title= `${webPageName}`
   link(rel='preload', as='image', href=`/assets/${headerImage}.webp`)
   script(type='module', src='/members/script.js')
 
