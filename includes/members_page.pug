@@ -3,11 +3,9 @@ extends /../includes/page.pug
 block html
   block headerImage
     - const headerImage = ''
-    - const webPageName = ''
 
 block head
   - css = '/members/style.css'
-  title= `Sunderland Rowing Club ${webPageName}`
   link(rel='preload', as='image', href=`/assets/${headerImage}.webp`)
   script(type='module', src='/members/script.js')
 
