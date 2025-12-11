@@ -3,9 +3,11 @@ extends /../includes/page.pug
 block html
   block headerImage
     - const headerImage = ''
+    - const pageName = ''
 
 block head
   - css = '/members/style.css'
+  title= pageName
   link(rel='preload', as='image', href=`/assets/${headerImage}.webp`)
   script(type='module', src='/members/script.js')
 
