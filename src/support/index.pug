@@ -5,9 +5,11 @@ append html
 
 block head
   - css = '/support/style.css'
-  title= 'Support Page'
   link(rel='preload', as='image', href=`/assets/${headerImage}.webp`)
   script(type='module', src='/support/script.js')
+
+block append head
+  title= title + ' Support Page'
 
 block content
   #header(style=`background-image:linear-gradient(to top, var(--base-color), transparent 100px),url('/assets/${headerImage}.webp');`)

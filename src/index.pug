@@ -1,9 +1,11 @@
 extends /../includes/page.pug
 
 block head
-  title= 'Sunderland Rowing Club Home Page'
   link(rel='preload', as='image', href='/assets/header_background.webp')
   script(type='module', src='/script.js')
+
+block append head
+  title= title + ' Home Page'
 
 block content
   #home-header
@@ -18,7 +20,7 @@ block content
         h1 Sunderland Rowing Club
         p Welcome to Sunderland Rowing Club, where everyone is invited. No prior rowing experience is required (although we'd love to hear about any experience you may have); just bring suitable clothing, and we can provide all other equipment.
         p Our club intends to provide a friendly, welcoming, and supportive environment for all members regardless of background or ability. We pride ourselves on our sense of community through building a social environment to support, build confidence, and create lasting friendships, all while learning to row or improving your already existing rowing ability.
-        p Join us and experience a challenge, a sense of teamwork, and what makes rowing feel truly special. Don't be afraid to contact us or sign up for one of our learn-to-row sessions and give it a go.
+        p Join us and experience a challenge, a sense of teamwork, and what makes rowing feel truly special. Don't be afraid to contact us and sign up for one of our learn-to-row sessions.
         
     .section.row
       #join-us-section.scroll-stop

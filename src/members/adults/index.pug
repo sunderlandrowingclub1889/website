@@ -1,5 +1,8 @@
 extends /../includes/members_page.pug
 
+block append head
+  title= title + ' Adults Page'
+
 block pageTitle
   | Adults Training
 
@@ -7,7 +10,7 @@ block headerImage
   - const headerImage = 'members/adult_header'
 
 block sections
-  a#sign-up-button.header-button(role='button' tabindex='0' aria-label='Scroll to How to Join') Sign Up Now
+  a#sign-up-button.header-button(role='button' tabindex='0' aria-label='Scroll to How to Join to Sign Up Now') Sign Up Now
 
   .section.row
     .section-content
@@ -17,75 +20,7 @@ block sections
       p Sessions will aim to improve your rowing by mastering your ability to row with others confidently. Once you are able to get into a boat with any other semi-experienced members and consistently row without any major difficulties, you will then be invited to join more on-the-water sessions. Typically sessions will vary between either longer paddles aimed at technical ability and endurance or sprint-based sessions that may challenge both fitness and technical ability in a faster-paced environment.
       p These sessions are split in this way, as the invitation-only sessions can be a lot more challenging for less experienced rowers, and the open-to-all sessions will have a lot more focus on technical ability. This method works to progress each individual in the most well-suited environment possible so that people are not pushed too early, which may subsequently lead to a loss of interest or frustration. Please remember that rowing is like anything else and will take time to master, so don't put too much pressure on yourself. In addition, separating sessions also helps the coaches to manage safety cover and time spent with each crew; having many crews on the water at varying abilities can be very difficult to manage, especially with our ever-expanding community of adults.
       p Invitation-only sessions only apply outside of winter training; during this time all weekday sessions are available to everyone. This is because sessions are moved indoors and become predominantly RowErg based, as it is too dark outside. Session difficulty may still vary per day, but a coach can provide easier sessions or further information as to which days are less challenging and how sessions can be adapted to best suit you.
-      h1 Training Times
-      p Below is a rough outline for adult training times; however, this is subject to change for any given week due to events the club may be participating in, weather conditions, or any other extenuating circumstances.
-      h3 Summer Training:
-      p <small><i>(Typically March through to September)</i></small> 
-      table
-        tr
-          td Monday
-          td Invitation only
-          td 6:30pm - 8:00pm
-        tr
-          td Tuesday
-          td Invitation only
-          td 6:30pm - 8:00pm
-        tr
-          td Wednesday
-          td Open to all
-          td 6:30pm - 8:00pm 
-        tr
-          td Thursday
-          td Invitation only
-          td 6:30pm - 8:00pm
-        tr
-          td Friday
-          td Rest Day
-          td
-        tr
-          td Saturday
-          td Open to all
-          td Usually 10:30am  
-          td (Dependent on weather and events)
-        tr
-          td Sunday
-          td Open to all
-          td Usually 10:30am  
-          td (Dependent on weather and events)
-      h3 Winter Training:
-      p <small><i>(Typically October through to February)</i></small>
-      table
-        tr
-          td Monday
-          td Open to all
-          td 6:30pm - 8:00pm
-        tr
-          td Tuesday
-          td Open to all
-          td 6:30pm - 8:00pm
-        tr
-          td Wednesday
-          td Open to all
-          td 6:30pm - 8:00pm 
-        tr
-          td Thursday
-          td Open to all
-          td 6:30pm - 8:00pm
-        tr
-          td Friday
-          td Rest Day
-          td
-        tr
-          td Saturday
-          td Open to all
-          td Usually 10:30am  
-          td (Dependent on weather and events)
-        tr
-          td Sunday
-          td Open to all
-          td Usually 10:30am  
-          td (Dependent on weather and events)
-      
+    
     .section-attachments.important
       .plan.attachment
         .plan-name
@@ -104,15 +39,110 @@ block sections
       .attachment
         h2 Club Captain/Head Coach
         h3 Chris Webb
-        img(src='/assets/members/coaches/2.webp' alt='Head Coach Chris Webb')
         ul
           li Level 2 Rowing Coach
+          li First Aid Qualified
           li DBS Checked
-          li First Aid
-        - const email = 'chris@sunderlandrowing.co.uk'
-        //a.attachment-button(href=`mailto:${email}`)
-          .icon: include /../includes/icons/email.svg
-          | #{email}
+        img(src='/assets/members/coaches/2.webp' alt='Head Coach Chris Webb')
+        
+  .section.row
+    .section-content
+      h1 Training Times
+      p Below is a rough outline for adult training times; however, this is subject to change for any given week due to events the club may be participating in, weather conditions, or any other extenuating circumstances.
+      p Please contact us before attending sessions; this just helps us to better plan for everyone attending.
+      h3 Summer Training:
+      p <small><i>(Typically March through to September)</i></small> 
+      table
+        thead
+          tr 
+            th Day
+            th Restrictions
+            th Time
+            th Extra info
+        tbody
+          tr
+            td Monday
+            td Invitation only
+            td 6:30pm - 8:00pm
+            td
+          tr
+            td Tuesday
+            td Invitation only
+            td 6:30pm - 8:00pm
+            td
+          tr
+            td Wednesday
+            td Open to all
+            td 6:30pm - 8:00pm 
+            td
+          tr
+            td Thursday
+            td Invitation only
+            td 6:30pm - 8:00pm
+            td
+          tr
+            td Friday
+            td Rest Day
+            td
+            td
+          tr
+            td Saturday
+            td Open to all
+            td Usually 10:30am  
+            td (Dependent on weather and events)
+          tr
+            td Sunday
+            td Open to all
+            td Usually 10:30am  
+            td (Dependent on weather and events)
+      h3 Winter Training:
+      p <small><i>(Typically October through to February)</i></small>
+      table
+        thead
+          tr 
+            th Day
+            th Restrictions
+            th Time
+            th Extra info
+        tbody
+          tr
+            td Monday
+            td Open to all
+            td 6:30pm - 8:00pm
+            td
+          tr
+            td Tuesday
+            td Open to all
+            td 6:30pm - 8:00pm
+            td
+          tr
+            td Wednesday
+            td Open to all
+            td 6:30pm - 8:00pm
+            td 
+          tr
+            td Thursday
+            td Open to all
+            td 6:30pm - 8:00pm
+            td
+          tr
+            td Friday
+            td Rest Day
+            td
+            td
+          tr
+            td Saturday
+            td Open to all
+            td Usually 10:30am  
+            td (Dependent on weather and events)
+          tr
+            td Sunday
+            td Open to all
+            td Usually 10:30am  
+            td (Dependent on weather and events)
+      p <i>Please note that any changes to times will be announced within the relevant WhatsApp groups.</i>
+
+    
   
   .section
     h1 Senior, Masters, and Club Training

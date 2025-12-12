@@ -1,5 +1,8 @@
 extends /../includes/members_page.pug
 
+block append head
+  title= title + ' Flexi-members Page'
+
 block pageTitle
   | Flexi-members
 
@@ -7,13 +10,13 @@ block headerImage
   - const headerImage = 'members/flexi_header'
 
 block sections
-  a#sign-up-button.header-button Sign Up Now
+  a#sign-up-button.header-button(role='button' tabindex='0' aria-label='Scroll to How to Join to Sign Up Now') Sign Up Now
   
   .section.row
     .section-content
       p This page is intended for Flexi-members. This membership is the same as an adult membership but is discounted for those who either work overseas or are attending a university not within the area, as members of this type will not be able to attend as many sessions as those with a full adult membership.
       p This flexible option allows you to maintain your membership at a reduced rate while you’re away, preventing you from having to choose between full-price access or cancelling altogether. When you return during holidays, breaks, or visits, your full access is instantly restored—no rejoining fees and no hassle. It’s the perfect solution for anyone whose life takes them elsewhere but who still wants an easy way to stay part of our community.
-      p Please refer to our adult page for all other details regarding training and further information.
+      p Please refer to our adult page for all other details regarding training times and further information.
       br
       a.link-button(href='/members/adults') Adults Page
 

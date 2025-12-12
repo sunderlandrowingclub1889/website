@@ -1,5 +1,8 @@
 extends /../includes/members_page.pug
 
+block append head
+  title= title + ' Learn-to-Row Page'
+
 block pageTitle
   | Learn-to-Row
 
@@ -7,7 +10,7 @@ block headerImage
   - const headerImage = 'members/learn_header'
 
 block sections
-  a#sign-up-button.header-button Sign Up Now
+  a#sign-up-button.header-button(role='button' tabindex='0' aria-label='Scroll to How to Join to Sign Up Now') Sign Up Now
 
   .section.row
     .section-content
@@ -48,6 +51,55 @@ block sections
               li Stephen Beadling
               li Joshua Green 
 
+  .section.row 
+    .section-content 
+      h1 Training Times
+      p Below is a rough outline for learn-to-row training times; however, this is subject to change for any given week due to events the club may be participating in, weather conditions, or any other extenuating circumstances.
+      p Please contact us before attending sessions; this just helps us to better plan for everyone attending.
+      table
+        thead
+          tr 
+            th Day
+            th Restrictions
+            th Time
+            th Extra info
+        tbody
+          tr
+            td Monday
+            td Full members only
+            td 
+            td
+          tr
+            td Tuesday
+            td Full members only
+            td 
+            td
+          tr
+            td Wednesday
+            td Open to all
+            td 6:30pm - 8:00pm 
+            td
+          tr
+            td Thursday
+            td Full members only
+            td 
+            td
+          tr
+            td Friday
+            td Rest Day
+            td
+            td
+          tr
+            td Saturday
+            td Open to all
+            td Usually 10:30am  
+            td (Dependent on weather and events)
+          tr
+            td Sunday
+            td Open to all
+            td Usually 10:30am  
+            td (Dependent on weather and events)
+    p <i>Please note that any changes to times will be announced within the relevant WhatsApp groups.</i>
   .section
     #sign-up-section.scroll-stop
     .section-split
