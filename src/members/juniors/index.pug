@@ -7,7 +7,7 @@ block headerImage
   - const headerImage = 'members/juniors_header'
 
 block sections
-  a#sign-up-button.header-button Sign Up Now
+  a#sign-up-button.header-button(role='button' tabindex='0' aria-label='Scroll to How to Join') Sign Up Now
 
   .section.row
     .section-content
@@ -22,9 +22,9 @@ block sections
       a.link-button(href="/contact") Email Us
       h1 Training Times
       p Below is a rough outline for junior training times; however, this is subject to change for any given week due to events the club may be participating in, weather conditions, or any other extenuating circumstances.
+      h3 Summer Training:
+      p <small><i>(Typically March through to September)</i></small>   
       table
-        p <strong>Summer Training</strong>:
-        p <small><i>(Typically March through to September)</i></small> 
         tr
           td Monday
           td Invitation only
@@ -44,17 +44,18 @@ block sections
         tr
           td Friday
           td Rest Day
+          td 
         tr
           td Saturday
           td Usually 10:30am 
-          td (However this is dependent on both the weather and events)
+          td (Dependent on weather and events)
         tr
           td Sunday
           td Usually 10:30am 
-          td (However this is dependent on both the weather and events)
+          td (Dependent on weather and events)
+      h3 Winter Training:
+      p <small><i>(Typically October through to February)</i></small>
       table
-        p <strong>Winter Training</strong>:
-        p <small><i>(Typically October through to February)</i></small>
         tr
           td Monday
           td Open to all
@@ -74,14 +75,15 @@ block sections
         tr
           td Friday
           td Rest Day
+          td 
         tr
           td Saturday
           td Usually 10:30am 
-          td (However this is dependent on both the weather and events)
+          td (Dependent on weather and events)
         tr
           td Sunday
           td Usually 10:30am 
-          td (However this is dependent on both the weather and events)
+          td (Dependent on weather and events)
 
     .section-attachments.important
       .plan.attachment
@@ -101,7 +103,7 @@ block sections
       .attachment
         h2 Junior Coach
         h3 Sarah Hodge
-        img(src='/assets/members/coaches/1.webp')
+        img(src='/assets/members/coaches/1.webp' alt='Junior Coach Sarah Hodge')
         ul
           li Level 2 Rowing Coach
           li DBS Checked
