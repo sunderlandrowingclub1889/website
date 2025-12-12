@@ -1,13 +1,16 @@
 extends /../includes/members_page.pug
 
 block pageTitle
-  | Learn to Row
+  | Learn-to-Row
+
+block head
+  title= 'Learn-to-Row Page'
 
 block headerImage
   - const headerImage = 'members/learn_header'
 
 block sections
-  a#sign-up-button.header-button Sign Up Now
+  //a#sign-up-button.header-button Sign Up Now ?Unsure why css is not working?
 
   .section.row
     .section-content

@@ -1,6 +1,7 @@
 extends /../includes/page.pug
 
 block head
+  title= 'Sunderland Rowing Club Home Page'
   link(rel='preload', as='image', href='/assets/header_background.webp')
   script(type='module', src='/script.js')
 
@@ -9,7 +10,7 @@ block content
     #home-header-text
       #home-logo: include /../includes/icons/logo.svg
       .row
-        a#join-us-button.header-button Join Us
+        a#join-us-button.header-button(role='button' tabindex='0' aria-label='Scroll to Learn-To-Row Section') Join Us
   
   #sections
     .section.row
