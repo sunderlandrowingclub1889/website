@@ -26,7 +26,6 @@ body
   left: 0
   width: 100%
   height: var(--nav-bar-height)
-  border-bottom: 2px solid #fff
   display: flex
   align-items: stretch
   background-color: #fff
@@ -261,7 +260,7 @@ body
       content: ''
       display: block
       width: 2px
-      background-color: var(--base-color)
+      background-color: none
       position: absolute
       top: calc(1em + 14px)
       bottom: 16px
@@ -282,10 +281,15 @@ body
 
 #nav-bar-hamburger-button
   display: none
+  color: #000
+  
+  &:hover
+    background-color: var(--background-color)
+    color: #fff
   
   svg
     display: block
-    fill: #000
+    fill: currentcolor
     width: calc(var(--nav-bar-height) - 4px)
     height: calc(var(--nav-bar-height) - 4px)
   
