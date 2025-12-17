@@ -16,7 +16,7 @@
   margin-left: 20px
   margin-right: 100px
   border-radius: 4px
-  box-shadow: 0 4px 16px #0004
+  box-shadow: 0 4px 16px var(--shadow-light)
   box-sizing: border-box
 
   &>.scroll-stop:first-child
@@ -66,7 +66,7 @@
     
     .attachment
       background-color: var(--white)
-      color: #000
+      color: var(--black)
       padding: 12px 18px
       border-radius: 4px
       
@@ -88,7 +88,7 @@
         display: flex
         align-items: center
         text-decoration: none
-        color: #000
+        color: var(--black)
         gap: 10px
         padding: 12px 18px
         margin: 0 -18px
@@ -101,7 +101,7 @@
         
         &:hover
           color: var(--white)
-          background-color: #68BBE3
+          background-color: var(--secondary-background-color)
     
     .plan
       overflow: hidden
@@ -124,7 +124,7 @@
         margin: -12px -18px 0
         padding: 4px 8px
         color: var(--white)
-        text-shadow: 1px 1px 1px #000
+        text-shadow: 1px 1px 1px var(--black)
         
         &>:not(:first-child)
           font-size: 0.8em
@@ -173,7 +173,7 @@
     display: block
     text-align: center
     width: @css{min(calc(100% - 300px), 1460px)}
-    filter: drop-shadow(0 1px 2px #0008) drop-shadow(0 0.1em 0.1em #0004)
+    filter: drop-shadow(0 1px 2px var(--shadow-dark)) drop-shadow(0 0.1em 0.1em var(--shadow-light))
 
 .section h1
   margin-bottom: 0.5em
