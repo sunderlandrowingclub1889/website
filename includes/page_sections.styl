@@ -12,12 +12,24 @@
   background-color: var(--background-color)
   width: @css{min(calc(100% - 120px), 1460px)}
   min-width: 660px
-  padding: 20px 120px 60px 60px
+  padding: 10px 120px 60px 60px
   margin-left: 20px
   margin-right: 100px
   border-radius: 4px
   box-shadow: 0 4px 16px var(--shadow-light)
   box-sizing: border-box
+
+  .short-section
+    margin-bottom: -30px
+  
+  .shorter-section
+    margin-bottom: -70px
+
+    p
+      margin-bottom: 30px
+  
+  .long-section
+    margin-bottom: 50px
 
   &>.scroll-stop:first-child
     position: absolute
@@ -189,7 +201,7 @@
   .section
     min-width: 0
     margin: 0
-    padding: 20px 20px 60px 20px
+    padding: 10px 20px 40px 20px
     width: @css{min(calc(100% - 40px), 1460px)}
     font-size: 0.8em
   
@@ -201,7 +213,7 @@
       display: none
 
     &.important
-      margin: 40px 0 -40px
+      margin: 40px 0 0px
   
   &>.sub-section
     flex-direction: column
