@@ -47,9 +47,12 @@ block content
 
     .section.row
       .section-content
-        h1 Becoming A Member
-        p This section is intended for those who have completed the free learn-to-row sessions. Below lists and describes the member options we have at our club.
-        table
+        h1 Membership
+        p This section is intended for those who have completed the free learn-to-row sessions. 
+        p Below lists and describes the member options we have at our club. Most of these payments have the option to be paid either monthly, quarterly, or yearly, whichever best suits you. 
+        p Click on the relevant box to find out more.
+        
+        //table
           thead
             tr 
               th Membership Type
@@ -67,15 +70,84 @@ block content
             tr 
               td University of Sunderland Students
               td Those who are currently enrolled at the University of Sunderland.
+      
+        .rowCard 
+          a(href='/members/adults').columnCard 
+            .contentCard 
+              h3 Adults
+              p Anyone no longer in compulsory full-time education and over the age of 18 before the most recent 1st of September at 00:00.
+              .paymentCard
+                .paymentOptions
+                  .paymentGroupCard
+                    .paymentAmount
+                      p £15
+                    .paymentType 
+                      p / Monthly
+                  .paymentGroupCard
+                    .paymentAmount
+                      p £45
+                    .paymentType 
+                      p / Quarterly 
+                  .paymentGroupCard
+                    .paymentAmount
+                      p £180
+                    .paymentType 
+                      p / Yearly
+                .paymentDescription
+                  p Adult members
+          a(href='/members/juniors').columnCard 
+            .contentCard 
+              h3 Juniors
+              p Anyone still in compulsory full-time education, typically between the ages of 10 and 18 (as specified by British Rowing, at 00:00 on the 1st of September after a junior's 18th birthday, that member is no longer a junior). 
+              .paymentCard
+                .paymentOptions
+                  .paymentGroupCard
+                    .paymentAmount
+                      p £12.50
+                    .paymentType 
+                      p / Monthly
+                  .paymentGroupCard
+                    .paymentAmount
+                      p £37.50
+                    .paymentType 
+                      p / Quarterly 
+                  .paymentGroupCard
+                    .paymentAmount
+                      p £150
+                    .paymentType 
+                      p / Yearly
+                .paymentDescription
+                  p Junior members
+          a(href='/members/flexi').columnCard 
+            .contentCard 
+              h3 Flexi-members
+              p Adult members who either work overseas or are currently attending a university not within the area.
+              .paymentCard
+                .paymentOptions
+                  .paymentGroupCard
+                    .paymentAmount
+                      p £50
+                    .paymentType 
+                      p / Yearly
+                .paymentDescription
+                  p Flexi-members 
+          a(href='https://sj.sunderland.ac.uk/student-information/support-services/team-sunderland/clubs/rowing/').columnCard 
+            .contentCard 
+              h3 University of Sunderland Students
+              p Those who are currently enrolled at the University of Sunderland.   
+              .paymentCard
+                .paymentDescription
+                  p University of Sunderland Students
+        
         //ul 
           li <strong>Adults</strong> – Anyone no longer in compulsory full-time education and over the age of 18 before the most recent 1st of September at 00:00.
           li <strong>Juniors</strong> – Anyone still in compulsory full-time education, typically between the ages of 10 and 18 (as specified by British Rowing, at 00:00 on the 1st of September after a junior's 18th birthday, that member is no longer a junior). 
           li <strong>Flexi-members</strong> – Adult members who either work overseas or are currently attending a university not within the area.
           li <strong>University of Sunderland Students</strong> – Those who are currently enrolled at the University of Sunderland.
-        p Most of these payments have the option to be paid either monthly, quarterly, or yearly, whichever best suits you.
-        p Click on the relevant payment box to find out more. 
+        //p Most of these payments have the option to be paid either monthly, quarterly, or yearly, whichever best suits you.
+        //p Click on the relevant payment box to find out more. 
         
-      .section-attachments.important
+      //.section-attachments.important
         a.plan.attachment(href='/members/adults')
           .plan-name Adults
           .row

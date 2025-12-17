@@ -7,7 +7,7 @@
   margin-top: 20px
   text-decoration: none
   font-size: 1em
-  color: #fff
+  color: var(--white)
   padding: 5px
   background-color: var(--background-color)
   border-radius: 4px
@@ -23,13 +23,13 @@
       width: 1px
       height: 1px
       display: block
-      fill: #fff
+      fill: var(--white)
 
   .icon>svg
     width: 24px
     height: 24px
     display: block
-    fill: #fff
+    fill: var(--white)
 
 .section-content
   display: flex
@@ -42,7 +42,7 @@
 
   &>a
     max-width: 600px
-    border: 5px solid #fff
+    border: 5px solid var(--white)
     border-radius: 4px
     box-sizing: border-box
     align-self: center
@@ -71,8 +71,8 @@
   &>a:not(.plan.attachment)
     display: block
     max-width: 400px
-    background-color: #fff
-    border: 8px solid #fff
+    background-color: var(--white)
+    border: 8px solid var(--white)
     border-radius: 4px
     cursor: pointer
     text-decoration: none
@@ -83,13 +83,14 @@
 
     &>img
       display: block
-      background-color: #fff
+      width: 100%
+      background-color: var(--white)
 
   .attachment
     padding: 12px !important
     
 .link-button
-  background-color: #fff
+  background-color: var(--white)
   color: #000
   border-radius: 4px
   padding: 12px 18px
@@ -118,7 +119,7 @@
   
   &>a
     max-width: 600px
-    border: 5px solid #fff 
+    border: 5px solid var(--white) 
     border-radius: 4px
     box-sizing: border-box
     align-self: center
@@ -143,10 +144,10 @@
   &>a
     display: block
     max-width: @css{min(400px, 100%)}
-    border: 8px solid #fff
+    border: 8px solid var(--white)
     border-radius: 4px
     cursor: pointer
-    background-color: #fff
+    background-color: var(--white)
 
     &>img
       display: block

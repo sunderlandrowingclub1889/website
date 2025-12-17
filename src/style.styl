@@ -2,7 +2,7 @@
 @import '/includes/page_sections.styl'
 
 .link-button
-  background-color: #fff
+  background-color: var(--white)
   color: #000
   border-radius: 4px
   padding: 12px 18px
@@ -40,7 +40,7 @@
     position: relative
     box-shadow: 0 0.1em 0.2em #0008
     background-color: var(--background-color)
-    color: #fff
+    color: var(--white)
     text-shadow: 0 1px 3px #0008
     font-size: 1.2em
     cursor: pointer
@@ -53,12 +53,12 @@
       width: calc(100% + 8px)
       height: calc(100% + 8px)
       box-sizing: border-box
-      border: 2px solid #fff
+      border: 2px solid var(--white)
       border-radius: 8px
 
 #home-logo>svg
   margin-top: -80px
-  fill: #fff
+  fill: var(--white)
   height: @css{min(480px, calc(100vh - var(--nav-bar-height) - 30px))}
   min-height: 300px
   filter: drop-shadow(0 1px 2px #0008) drop-shadow(0 0.1em 0.1em #0004)
@@ -91,3 +91,70 @@ tr
 td:first-child 
   font-weight: bold
   font-size: 1.25em
+
+.rowCard
+  margin-top: 20px
+  width: calc(100% - 30px)
+
+  &:after
+    content:""
+    display: table
+    clear: both
+
+.columnCard
+  text-decoration: none
+  color: var(--white)
+  float: left
+  width: 100%
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2)
+  padding: 10px
+  text-align: left
+  background-color: var(--base-color)
+  border: 2px solid var(--base-color)
+  border-radius: 4px
+  margin-bottom: 10px
+
+  &:hover
+    background-color: var(--secondary-background-color)
+    border: 2px solid var(--white)
+
+    .paymentCard
+      background-color: #3BA1DC
+
+.contentCard
+  h3 
+    margin: 5px
+    font-size: 1.75em
+  
+  p 
+    margin: 5px
+    font-size: 1.25em
+
+.paymentCard
+  color: var(--white)
+  background-color: var(--background-color)
+  margin-top: 10px
+  
+  text-align: center
+  border-radius: 4px
+
+  .paymentOptions
+    display: flex
+    flex-direction: row
+    justify-content: space-evenly
+
+    .paymentAmount
+      font-weight: bold
+      font-size: 1.25em
+    
+    .paymentType
+      font-size: 1em
+      margin-bottom: -10px
+
+  .paymentDescription 
+    padding-top: 5px
+    padding-bottom: 5px
+    font-size: 1em
+
+    p::before
+      content: 'Click this box to find out more about '
