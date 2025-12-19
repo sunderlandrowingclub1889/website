@@ -11,6 +11,7 @@ html(lang='en')
           css = '/style.css'
     
     block head
+    meta(name='algolia-site-verification', content='9533553439263A82')
     meta(name='og:type', content='website')
     meta(name='og:title', content=title)
     meta(name='og:description', content=desc)
@@ -70,7 +71,10 @@ html(lang='en')
     
     #content
       block content
-    
+      //<!-- Elfsight Search | Untitled Search -->
+      //<script src="https://elfsightcdn.com/platform.js" async></script>
+      //<div class="elfsight-app-1488db50-83bf-4447-ab91-1d9d44c994cf" data-elfsight-app-lazy></div>
+      
     #footer
       #footer-website
         a#footer-britishrowing(href='https://www.britishrowing.org/'): img(src='/assets/british_rowing.webp' alt='British Rowing Logo' width='70' height='52')
@@ -103,3 +107,4 @@ html(lang='en')
         a.footer-social-link(title='Youtube', href='https://www.youtube.com/@sunderlandrowingclub'): include /../includes/icons/youtube.svg
         a.footer-social-link(title='Instagram', href='https://www.instagram.com/sunderland_rowing_club/'): include /../includes/icons/instagram.svg
         a.footer-social-link(title='Facebook', href='https://www.facebook.com/sunderlandrowingclub'): include /../includes/icons/facebook.svg
+
