@@ -72,33 +72,10 @@ block content
               td Those who are currently enrolled at the University of Sunderland.
       
         .rowCard 
-          a(href='/members/adults').columnCard 
-            .contentCard 
-              h3 Adults
-              p Anyone no longer in compulsory full-time education and over the age of 18 before the most recent 1st of September at 00:00.
-              .paymentCard
-                .paymentOptions
-                  .paymentGroupCard
-                    .paymentAmount
-                      p £15
-                    .paymentType 
-                      p / Monthly
-                  .paymentGroupCard
-                    .paymentAmount
-                      p £45
-                    .paymentType 
-                      p / Quarterly 
-                  .paymentGroupCard
-                    .paymentAmount
-                      p £180
-                    .paymentType 
-                      p / Yearly
-                .paymentDescription
-                  p Adult members
           a(href='/members/juniors').columnCard 
             .contentCard 
               h3 Juniors
-              p Anyone still in compulsory full-time education, typically between the ages of 10 and 18 (as specified by British Rowing, at 00:00 on the 1st of September after a junior's 18th birthday, that member is no longer a junior). 
+              p Anyone considered a junior by British Rowing's definition (see British Rowing for more info); this is typically someone between the ages of 10 and 18. If there is any confusion, please contact us.
               .paymentCard
                 .paymentOptions
                   .paymentGroupCard
@@ -118,6 +95,29 @@ block content
                       p / Yearly
                 .paymentDescription
                   p Junior members
+          a(href='/members/adults').columnCard 
+            .contentCard 
+              h3 Adults
+              p Anyone no longer considered a junior by British Rowing's definition (see British Rowing for more info); this is typically someone over the age of 18. If there is any confusion, please contact us.
+              .paymentCard
+                .paymentOptions
+                  .paymentGroupCard
+                    .paymentAmount
+                      p £15
+                    .paymentType 
+                      p / Monthly
+                  .paymentGroupCard
+                    .paymentAmount
+                      p £45
+                    .paymentType 
+                      p / Quarterly 
+                  .paymentGroupCard
+                    .paymentAmount
+                      p £180
+                    .paymentType 
+                      p / Yearly
+                .paymentDescription
+                  p Adult members
           a(href='/members/flexi').columnCard 
             .contentCard 
               h3 Flexi-members
@@ -138,7 +138,10 @@ block content
               .paymentCard
                 .paymentDescription
                   p University of Sunderland Students
-        
+        p Please see below for further information regarding British Rowing and classifications:
+        ul
+          li <a style='color:white' href='https://www.britishrowing.org/go-rowing/types-of-rowing/junior-rowing/'>Junior Rowing Article</a>
+          li <a style='color:white' href='https://www.britishrowing.org/wp-content/uploads/2025/03/2025-British-Rowing-Rules-of-Racing.pdf'>2025 Rules of Racing PDF</a>
         //ul 
           li <strong>Adults</strong> – Anyone no longer in compulsory full-time education and over the age of 18 before the most recent 1st of September at 00:00.
           li <strong>Juniors</strong> – Anyone still in compulsory full-time education, typically between the ages of 10 and 18 (as specified by British Rowing, at 00:00 on the 1st of September after a junior's 18th birthday, that member is no longer a junior). 
