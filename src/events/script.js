@@ -235,10 +235,22 @@ const now = new Date
 // calendar.setMonth(now.getFullYear(), now.getMonth())
 
 // Filter out recurring and past events, sort them by date, and get the first three
-for (const event of events.filter(e => e.date - now >= 0).sort((a, b) => a.date - b.date).slice(0, Infinity)) {
-  // Look at only including events of current year (i.e. Infinity needs to be changed to sliding variable)
+for (const event of events.filter(e => e.date - now >= 0 && (e.date.getFullYear() === now.getFullYear() || e.date.getFullYear() === now.getFullYear() + 1) && !e.attendance).sort((a, b) => a.date - b.date)) {
   // Add event to the upcoming events list
   $('#upcoming-events').append(
+    E('a').addClass('event-button').attr('href', getEventLink(event, event.date)).append(
+      E('div').addClass('event-button-name').text(event.name),
+      E('div').addClass('event-button-description').text(event.desc),
+      E('div').addClass('event-button-date').text(dateFormat.format(event.date)),
+      E('div').addClass('click-for-more').text("Click for more info")
+    )
+    // Add event location to this?
+  )
+}
+
+for (const event of events.filter(e => e.date - now <= 0 && (e.date.getFullYear() === now.getFullYear() || e.date.getFullYear() === now.getFullYear() - 1) && !e.attendance).sort((a, b) => a.date - b.date)) {
+  // Add event to the past events list
+  $('#past-events').append(
     E('a').addClass('event-button').attr('href', getEventLink(event, event.date)).append(
       E('div').addClass('event-button-name').text(event.name),
       E('div').addClass('event-button-description').text(event.desc),

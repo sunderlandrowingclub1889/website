@@ -35,6 +35,7 @@ const reEventImage = /^Image:\s*/i
 const reEventColor = /^Colou?r:\s*/i
 const reEventLocation = /^Location:\s*/i
 const reEventLink = /^Link:\s*/i
+const reEventAttendance = /^Attendance:\s*/i
 
 const recursMap = {
   daily: 'd',
@@ -81,6 +82,7 @@ async function processEvent(file) {
     color,
     location,
     link,
+    attendance,
     desc
   for (let i = 0; i < lines.length; i++) {
     if (typeof desc !== 'undefined') {
@@ -103,6 +105,8 @@ async function processEvent(file) {
       location = lines[i].replace(reEventLocation, '').trim()
     } else if (reEventLink.test(lines[i])) {
       link = lines[i].replace(reEventLink, '').trim()
+    } else if (reEventAttendance.test(lines[i])) {
+      attendance = lines[i].replace(reEventAttendance, '').trim()
     } else if (typeof desc === 'undefined' && lines[i] === '---') {
       desc = []
     }
@@ -124,6 +128,9 @@ async function processEvent(file) {
     }
     if (typeof link !== 'undefined') {
       event.link = link
+    }
+    if (typeof attendance !== 'undefined') {
+      event.attendance = attendance
     }
     if ((typeof desc !== 'undefined') && desc.join('\n').trim().length) {
       event.desc = desc.join('\n').trim()
@@ -152,6 +159,9 @@ async function processEvent(file) {
     }
     if (typeof link !== 'undefined') {
       event.link = link
+    }
+    if (typeof attendance !== 'undefined') {
+      event.attendance = attendance
     }
     if ((typeof desc !== 'undefined') && desc.join('\n').trim().length) {
       event.desc = desc.join('\n').trim()
