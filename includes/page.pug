@@ -77,24 +77,24 @@ html(lang='en')
             
     #footer
       #footer-website
-        a#footer-britishrowing(href='https://www.britishrowing.org/'): img(src='/assets/british_rowing.webp' alt='British Rowing Logo' width='70' height='52')
+        a#footer-britishrowing(href='https://www.britishrowing.org/', title='British Rowing', target='_blank', rel='noopener', aria-label='Link to british rowing'): img(src='/assets/british_rowing.webp' alt='British Rowing Logo' width='70' height='52')
         div Sunderland Rowing Club
         sub Website by Even Aasgaard Torset &amp; Martin Murphy
       
       #footer-contact
-        a.row(href='mailto:sunderlandrowingclub1889@gmail.com')
+        a.row(href='mailto:sunderlandrowingclub1889@gmail.com', title='Email', target='_blank', rel='noopener', aria-label='Link to email')
           #footer-email
             .footer-details
               .footer-icon: include /../includes/icons/email.svg
               | sunderlandrowingclub1889@gmail.com
         
-        a.row(href='tel:07546363662')
+        a.row(href='tel:07546363662', title='Phone', target='_blank', rel='noopener', aria-label='Link to phone')
           #footer-tel
             .footer-details
               .footer-icon: include /../includes/icons/phone.svg
               | 07546 363662
         
-        a.row.location-row(href='https://goo.gl/maps/uGbUXG5Tvhcs3YoD9')
+        a.row.location-row(href='https://goo.gl/maps/uGbUXG5Tvhcs3YoD9', title='Google Maps', target='_blank', rel='noopener', aria-label='Link to google maps')
           #footer-address
             .footer-details
               .footer-icon: include /../includes/icons/map-marker.svg
@@ -104,7 +104,7 @@ html(lang='en')
                 li SR4 0RT
       
       #footer-social
-        a.footer-social-link(title='Youtube', href='https://www.youtube.com/@sunderlandrowingclub'): include /../includes/icons/youtube.svg
-        a.footer-social-link(title='Instagram', href='https://www.instagram.com/sunderland_rowing_club/'): include /../includes/icons/instagram.svg
-        a.footer-social-link(title='Facebook', href='https://www.facebook.com/sunderlandrowingclub'): include /../includes/icons/facebook.svg
+        a.footer-social-link(title='Youtube', href='https://www.youtube.com/@sunderlandrowingclub', target='_blank', rel='noopener', aria-label='Link to youtube'): include /../includes/icons/youtube.svg
+        a.footer-social-link(title='Instagram', href='https://www.instagram.com/sunderland_rowing_club/', target='_blank', rel='noopener', aria-label='Link to instagram'): include /../includes/icons/instagram.svg
+        a.footer-social-link(title='Facebook', href='https://www.facebook.com/sunderlandrowingclub', target='_blank', rel='noopener', aria-label='Link to facebook'): include /../includes/icons/facebook.svg
 

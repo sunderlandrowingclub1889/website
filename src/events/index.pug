@@ -32,18 +32,18 @@ block content
     .section
       #upcoming-events-section.scroll-stop
       h1 Upcoming Events
-      p Our club often competes in events both local and national; below are links to events that we aim to attend. Locally more races are held, all of which can be found on <a href="https://www.nerowing.com/calendar.html">Northern Rowing's website</a>; alternatively, a larger collection of nationwide events can be found on <a href="https://www.britishrowing.org/competition-calendar/">British Rowing's website</a>.
+      p Our club often competes in events both local and national; below are links to events that we aim to attend. Locally more races are held, all of which can be found on <a href="https://www.nerowing.com/calendar.html", target='_blank', title='Opens link in new window', rel='noopener', aria-label='Link to Northern Rowings Calendar'>Northern Rowing's website</a>; alternatively, a larger collection of nationwide events can be found on <a href="https://www.britishrowing.org/competition-calendar/", target='_blank', title='Opens link in new window', rel='noopener', aria-label='Link to British Rowings Calendar'>British Rowing's website</a>.
       #upcoming-events
 
     .section 
       h1 Past Events 
-      p Below are links to events that our club has attended within the last year. A full archived list of all events from the previous year(s) can be found on <a href="https://biddulph.org.uk/2024cal.htm" id="biddulph-link">David Biddulph's rowing pages</a>.      
+      p Below are links to events that our club has attended within the last year. A full archived list of all events from the previous year(s) can be found on <a href="https://biddulph.org.uk/2024cal.htm", id="biddulph-link", target='_blank', title='Opens link in new window', rel='noopener', aria-label='Link to David Biddulphs Rowing Calendar'>David Biddulph's rowing pages</a>.      
       #past-events
     
     script.
       const link = document.getElementById('biddulph-link')
       const previousYear = new Date().getFullYear() - 1
-      link.href = `https://biddulph.org.uk/${previousYear}cal.htm`
+      link.href = `https://biddulph.org.uk/${previousYear}cal.htm`;
 
     .section
       .shorter-section
