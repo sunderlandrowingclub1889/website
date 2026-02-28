@@ -6,7 +6,8 @@
       "src",
       "includes",
       "images",
-      "events"
+      "events",
+      "documents"
     ],
     "pugLocals": {
       "domain": "sunderland-rowing-club-preview.pages.dev"

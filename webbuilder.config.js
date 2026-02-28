@@ -25,6 +25,7 @@ const thumbnailOptions = {
 }
 
 const reImageExts = /\.(?:png|jpe?g|gif|webp)$/
+const rePdfExts = /\.pdf$/i
 const reEventDate = /^Date:\s*/i
 const reEventTime = /^Time:\s*/i
 const reEventRecurs = /^Recurs:\s*/i
@@ -182,14 +183,14 @@ export default {
         { // Full-size version of the image
           const outFull = path.resolve(path.join('dist/assets', outPath))
           fs.mkdirSync(path.dirname(outFull), { recursive: true })
-          await img.clone().webp({ quality: 90 }).toFile(outFull)
+          await img.clone().rotate().webp({ quality: 90 }).toFile(outFull)
           images.push(path.relative('dist/assets', outFull).replace(/\\/g, '/'))
         }
 
         { // Smaller version of the image
           const outFull = path.resolve(path.join('dist/assets/thumbnails', outPath))
           fs.mkdirSync(path.dirname(outFull), { recursive: true })
-          await img.resize(thumbnailOptions).webp({ quality: 80 }).toFile(outFull)
+          await img.resize(thumbnailOptions).rotate().webp({ quality: 80 }).toFile(outFull)
         }
       } catch {
         // If the image can't be converted, it might be corrupt, so just ignore it
@@ -197,6 +198,18 @@ export default {
     }
     fs.mkdirSync('dist/assets', { recursive: true })
     await fs.promises.writeFile('dist/assets/images.json', JSON.stringify(images), 'utf-8')
+
+    const documents = []
+    for await (const file of getFiles('documents')) {
+      if (!rePdfExts.test(file)) continue;
+      const outPath = path.resolve(
+        path.join('dist/assets/documents', path.relative('documents', file))
+      )
+      fs.mkdirSync(path.dirname(outPath), { recursive: true })
+      fs.copyFileSync(file, outPath)
+      documents.push(path.relative('dist/assets/documents', outPath).replace(/\\/g, '/'))
+    }
+    await fs.promises.writeFile('dist/assets/documents.json', JSON.stringify(documents), 'utf-8')
 
     const events = []
     for await (const file of getFiles('events')) try {
@@ -220,7 +233,7 @@ export default {
           for await (const file of getFiles(path.dirname(imagesFileNoExt))) {
             if (imagesFileNoExt === path.relative('.', path.join(path.dirname(file), path.basename(file, path.extname(file))))) {
               return [
-                await sharp(file).resize(thumbnailOptions).webp({ quality: 80 }).toBuffer(),
+                await sharp(file).resize(thumbnailOptions).rotate().webp({ quality: 80 }).toBuffer(),
                 'image/webp'
               ]
             }
@@ -241,7 +254,7 @@ export default {
           for await (const file of getFiles(path.dirname(imagesFileNoExt))) {
             if (imagesFileNoExt === path.relative('.', path.join(path.dirname(file), path.basename(file, path.extname(file))))) {
               return [
-                await sharp(file).webp({ quality: 90 }).toBuffer(),
+                await sharp(file).rotate().webp({ quality: 90 }).toBuffer(),
                 'image/webp'
               ]
             }
@@ -258,6 +271,38 @@ export default {
           images.push(path.join(path.relative('images', path.dirname(file)), path.basename(file, path.extname(file)) + '.webp').replace(/\\/g, '/'))
         }
         return [JSON.stringify(images), 'application/json']
+      }
+    },
+    {
+      match: /\.pdf$/,
+      async process(filename, config, tools) {
+        if (fs.existsSync(filename)) {
+          return [
+            await fs.promises.readFile(filename),
+            'application/pdf'
+          ]
+        } else {
+          const pdfFile = path.join('documents', filename.replace(/^src\/assets\/documents\//, ''))
+          for await (const file of getFiles(path.dirname(pdfFile))) {
+            if (pdfFile === path.relative('.', file)) {
+              return [
+                await fs.promises.readFile(file),
+                'application/pdf'
+              ]
+            }
+          }
+        }
+      }
+    },
+    {
+      match: /^src\/assets\/documents\.json$/,
+      async process(filename, config, tools) {
+        const documents = []
+        for await (const file of getFiles('documents')) {
+          if (!rePdfExts.test(file)) continue;
+          documents.push(path.relative('documents', file).replace(/\\/g, '/'))
+        }
+        return [JSON.stringify(documents), 'application/json']
       }
     },
     {

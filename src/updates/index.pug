@@ -1,0 +1,78 @@
+extends /../includes/page.pug
+
+append html
+  - const headerImage = 'updates_header'//NEEDS HEADER IMAGE
+
+block head
+  - css = '/updates/style.css'
+  link(rel='preload', as='image', href=`/assets/${headerImage}.webp`)
+
+block append head
+  title= title + ' Updates Page'
+  meta(name='description' content='This is the Updates page to Sunderland Rowing Club. It provides general updates and news regarding the club.')
+
+block content
+  #header(style=`background-image:linear-gradient(to top, var(--base-color), transparent 100px),url('/assets/${headerImage}.webp');`)
+    #home-header-text
+      h1 Updates
+  #sections
+    .section
+      h1 Welcome to the latest updates from our rowing club 
+      p This your central hub for staying informed and connected. This page serves as our primary source for news and information about everything happening on and off the water. Whether you’re a seasoned athlete, a novice just learning the ropes, or an alum following along from afar, you’ll find valuable and timely updates here.
+      p Our <b>Newsletter Archive</b> provides easy access to past editions of club communications. It’s the perfect place to revisit memorable moments, celebrate achievements, and follow our progress throughout the season, ensuring you never miss an important update.
+      //p Be sure to explore our <b>Equipment & Boathouse News</b> section as well. Here we share updates on our fleet, new equipment acquisitions, repairs and maintenance projects, safety initiatives, and facility improvements. This section highlights how we care for the tools and spaces that support our athletes every day.
+      p We encourage you to check back regularly, as this page will grow and evolve alongside our season. Staying connected strengthens our community, supports our athletes, and helps ensure our club continues to thrive both competitively and collaboratively.
+    .section.row
+      .section-content
+        h1 Newsletter Archive 
+        p Every few months, we publish our official Club Newsletter — a deeper look into the life of our rowing community.
+        h2 What you can find in each newsletter
+        ul 
+          li Highlights from events and fundraising
+          li Upcoming events and important dates
+          li Club development updates
+          li Photos and memorable moments from the season
+        p Each issue aims to capture the spirit of our club — teamwork, dedication, and community.
+      .section-attachments.important
+        .attachment
+          h2 Archive
+          ul 
+            li <a style='color:white', href='/assets/documents/newsletters/Feb Club News.pdf', target='_blank', title='Opens link in new window', rel='noopener', aria-label='Link to Feb 2026 Newsletter'>Feb 2026</a>
+            
+    //.section
+      h1 Equipment &amp; Boathouse News
+      //.row.sector
+        .section-content 
+          h2 TITLE 
+          CONTENT
+        .section-attachments.important
+          ATTACHMENTS
+      .row.sector
+        .section-content
+          h2 New Defibrillator Installed at Our Rowing Club
+          p We’re pleased to share some important news for all members, families, visitors to our club, and the general public near our club: a new defibrillator has been installed at the boathouse.
+          p This addition is a great gesture towards our ongoing commitment to safety on and off the water.
+          h3(style="margin-bottom: 0px") Defibrillator Location
+          p The defibrillator is mounted inside of the boathouse, where it is easily accessible in the event of an emergency. Clear signage is in place so it can be found quickly when every second counts.
+          h3(style="margin-bottom: 0px") Why This Matters
+          p A defibrillator can significantly increase survival rates in the event of a sudden cardiac arrest. When used alongside CPR, a defibrillator:
+          ul
+            li Analyzes heart rhythm automatically
+            li Provides clear voice instructions
+            li Delivers a life-saving shock if needed
+            li Can be safely used by both trained and untrained responders
+          p Sudden cardiac arrest can happen to anyone, including athletes, spectators, or visitors, and having a defibrillator on site dramatically improves emergency readiness.
+          p Safety is a shared responsibility, and this new defibrillator ensures our club is better prepared to respond in an emergency.
+          p If you have any questions about the defibrillator, please contact a member of the committee.
+          h3(style="margin-bottom: 0px") Thank You!
+          p We would like to thank everyone involved in making this possible, from fundraising supporters to committee members who coordinated this generous donation from <a href='https://www.ra-lphh.org/', target='_blank', title='Opens link in new window', rel='noopener', aria-label='Link to Ra-lphh'>RALPHH</a>. <a href='https://www.ra-lphh.org/', target='_blank', title='Opens link in new window', rel='noopener', aria-label='Link to Ra-lphh'>RALPHH</a> is an amazing organization that aims to increase the number of sporting venues that have defibrillation equipment easily available. To learn more about <a href='https://www.ra-lphh.org/', target='_blank', title='Opens link in new window', rel='noopener', aria-label='Link to Ra-lphh'>RALPHH</a>, please see their website by clicking the links within this text or by clicking the image below.
+          p Stay safe, and see you on the water!
+          br
+        .section-attachments.important
+          a(href='https://www.ra-lphh.org/', target='_blank', title='Opens link in new window', rel='noopener', aria-label='Link to Ra-lphh'): img.attached(src='/assets/support/RALPHH logo final version_edited_edited.webp' data-src='/assets/support/RALPHH logo final version_edited_edited.webp' alt='RALPHH logo' height='260' width='350' style="background-color:#fff;")
+    
+    .section 
+      h1 RowWise
+      .section-content 
+        p British Rowing have launched training modules for all members, for those new to rowing as well as those who are experienced. RowWise is designed to support a safe, inclusive and enjoyable rowing experience, giving everyone involved in our sport the knowledge needed to meet the standards expected of them.
+        p Please visit <a href='https://www.britishrowing.org/rowwise/', target='_blank', title='Opens in new window', rel='noopener', aria-label='Link to RowWise'>https://www.britishrowing.org/rowwise/</a> to select the modules relevant to you. Speak to a club coach if you aren’t sure what to complete or need any support. 

@@ -1,4 +1,4 @@
-const plan = location.href.match(/\/members\/([^\/]+)/)[1]
+const plan = location.href.match(/\/members\/([^#\/]+)/)[1]
 
 function shuffle(array) {
   let i = array.length, ri
