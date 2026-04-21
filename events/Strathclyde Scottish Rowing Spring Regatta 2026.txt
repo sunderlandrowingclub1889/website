@@ -1,5 +1,6 @@
 Date: apr 18, 2026
 Name: Strathclyde Scottish Rowing Spring Regatta
 Link: https://www.scottish-rowing.org.uk/takingpart/compete/events/calendar/1069-spr23
+Ends: apr 19, 2026
 ---
-A two day Regatta at Strathclyde Park on the 8-lane, 2km international-standard course, with races spanning 1000m to 2000m
+A two day Regatta at Strathclyde Park on the 8-lane, 2km international-standard course, with races spanning 1000m and 2000m

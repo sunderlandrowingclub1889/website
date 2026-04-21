@@ -1,5 +1,6 @@
 Date: jul 10, 2026
 Name: Henley Masters Regatta
 Link: https://henleymastersregatta.org.uk/
+Ends: jul 12, 2026
 ---
 A three-day, masters only event, over a 1km course, held on the River Thames in Henley-on-Thames

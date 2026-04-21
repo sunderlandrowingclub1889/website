@@ -238,10 +238,12 @@ const now = new Date
 for (const event of events.filter(e => e.date - now >= 0 && (e.date.getFullYear() === now.getFullYear() || e.date.getFullYear() === now.getFullYear() + 1) && !e.attendance).sort((a, b) => a.date - b.date)) {
   // Add event to the upcoming events list
   $('#upcoming-events').append(
-    E('a').addClass('event-button').attr('href', getEventLink(event, event.date)).append(
+
+    E('a').addClass('event-button').attr('href', getEventLink(event, event.date)).attr('id', 'event-link').attr('target', '_blank').attr('title', 'Opens link in new window').attr('rel', 'noopener').attr('aria-label', 'Link to ' + event.name).append(
       E('div').addClass('event-button-name').text(event.name),
       E('div').addClass('event-button-description').text(event.desc),
-      E('div').addClass('event-button-date').text(dateFormat.format(event.date)),
+      E('div').addClass('event-button-date').text("Event begins on "+dateFormat.format(event.date)),
+      E('div').addClass('event-button-ends').text("Event ends on "+dateFormat.format(event.ends)),
       E('div').addClass('click-for-more').text("Click for more info")
     )
     // Add event location to this?
@@ -251,10 +253,11 @@ for (const event of events.filter(e => e.date - now >= 0 && (e.date.getFullYear(
 for (const event of events.filter(e => e.date - now <= 0 && (e.date.getFullYear() === now.getFullYear() || e.date.getFullYear() === now.getFullYear() - 1) && !e.attendance).sort((a, b) => a.date - b.date)) {
   // Add event to the past events list
   $('#past-events').append(
-    E('a').addClass('event-button').attr('href', getEventLink(event, event.date)).append(
+    E('a').addClass('event-button').attr('href', getEventLink(event, event.date)).attr('id', 'event-link').attr('target', '_blank').attr('title', 'Opens link in new window').attr('rel', 'noopener').attr('aria-label', 'Link to ' + event.name).append(
       E('div').addClass('event-button-name').text(event.name),
       E('div').addClass('event-button-description').text(event.desc),
-      E('div').addClass('event-button-date').text(dateFormat.format(event.date)),
+      E('div').addClass('event-button-date').text("Event began on "+dateFormat.format(event.date)),
+      E('div').addClass('event-button-end').text("Event ended on "+dateFormat.format(event.ends)),
       E('div').addClass('click-for-more').text("Click for more info")
     )
     // Add event location to this?

@@ -118,6 +118,10 @@ async function processEvent(file) {
       name,
       date: DateTime.fromFormat(`${date} ${time} Europe/London`, 'LLL d, yyyy HH:mm z').toUnixInteger()
     }
+    if (typeof ends !== 'undefined') {
+      event.ends = DateTime.fromFormat(`${ends} ${time} Europe/London`, 'LLL d, yyyy HH:mm z').toUnixInteger()
+    }
+    //time in ends should be swapped with endtime variable which needs to be added
     if (typeof image !== 'undefined') {
       event.image = image
     }

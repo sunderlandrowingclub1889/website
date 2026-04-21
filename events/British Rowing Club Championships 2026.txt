@@ -1,5 +1,6 @@
 Date: jul 17, 2026
 Name: British Rowing Club Championships
 Link: https://www.britishrowing.org/events/events-calendar/british-rowing-club-championships/
+Ends: jul 20, 2026
 ---
 A four day event, held at the National Water Sports Centre, Nottingham

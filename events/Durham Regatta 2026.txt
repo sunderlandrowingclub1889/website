@@ -1,5 +1,6 @@
 Date: jun 13, 2026
 Name: Durham Regatta
 Link: https://durham-regatta.org.uk/
+Ends: jun 14, 2026
 ---
 A two day event with both a short (700m) and long (1800m) course

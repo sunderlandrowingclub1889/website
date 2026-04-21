@@ -1,5 +1,6 @@
 Date: may 1, 2026
 Name: BUCS Regatta
 Link: https://www.bucs.org.uk/sports-page/rowing.html
+Ends: may 4, 2026
 ---
 A University only event held at the National Water Sports Centre, Holme Pierrepont in Nottigham, running from the 1st to the 4th of May

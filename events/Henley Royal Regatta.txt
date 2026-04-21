@@ -1,5 +1,6 @@
 Date: jun 30, 2026
 Name: Henley Royal Regatta
 Link: https://www.hrr.co.uk/
+Ends: jul 5, 2026
 ---
 A six-day, annual rowing event held on the River Thames in Henley-on-Thames
