@@ -2,6 +2,8 @@ extends /../includes/members_page.pug
 
 append head
   - css = '/members/students/style.css'
+  script(type='module', src='/members/students/script.js')
+
 
 block pageTitle
   | Sunderland University Students
@@ -10,8 +12,6 @@ block headerImage
   - const headerImage = 'members/uni_header'
 
 block sections
-  -  const coachImages = ['Steve_1.webp', 'Steve_2.webp', 'Steve_3.webp', 'Steve_4.webp','Steve_5.webp', 'Steve_6.webp', 'Steve_7.webp', 'Steve_8.webp', 'Steve_9.webp',];
-
   a#sign-up-button.header-button(role='button' tabindex='0' aria-label='Scroll to How to Join to Sign Up Now') Sign Up Now
 
   .section.row
@@ -32,7 +32,7 @@ block sections
             li Level 2 Rowing Coach
             li First Aid Qualified
             li DBS Checked
-          img(src=`/assets/members/coaches/${coachImages[Math.floor(Math.random() * coachImages.length)]}` alt='University Coach Stephen Beadling' width='205' object-fit='contain')
+          img#coach-image(src='' alt='University Coach Stephen Beadling' width='205' object-fit='contain')
   
   .section.row
     .section-content

@@ -3,6 +3,7 @@ extends /../includes/members_page.pug
 block append head
   title= title + ' Adults Page'
   meta(name='description' content='This is the adult member page to Sunderland Rowing Club. It provides a description of the membership, training times, further information, and how to join/pay.')
+  script(type='module', src='/members/adults/script.js')
 
 block pageTitle
   | Adults Training
@@ -46,7 +47,7 @@ block sections
             li Level 2 Rowing Coach
             li First Aid Qualified
             li DBS Checked
-          img(src=`/assets/members/coaches/${coachImages[Math.floor(Math.random() * coachImages.length)]}` alt='Head Coach Chris Webb' width='205' object-fit='contain')
+          img#coach-image(src='' alt='Club Captain/Head Coach Chris Webb' width='205' object-fit='contain')
           
   .section.row
     .section-content
