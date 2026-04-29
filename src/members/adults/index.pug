@@ -12,7 +12,6 @@ block headerImage
 
 block sections
   -  const coachImages = ['Chris_1.webp', 'Chris_2.webp', 'Chris_3.webp', 'Chris_4.webp','Chris_5.webp', 'Chris_6.webp', 'Chris_7.webp', 'Chris_8.webp',];
-  -  const randomImage = coachImages[Math.floor(Math.random() * coachImages.length)];
 
   a#sign-up-button.header-button(role='button' tabindex='0' aria-label='Scroll to How to Join to Sign Up Now') Sign Up Now
 
@@ -47,7 +46,7 @@ block sections
             li Level 2 Rowing Coach
             li First Aid Qualified
             li DBS Checked
-          img(src=`/assets/members/coaches/${randomImage}` alt='Head Coach Chris Webb' width='205' object-fit='contain')
+          img(src=`/assets/members/coaches/${coachImages[Math.floor(Math.random() * coachImages.length)]}` alt='Head Coach Chris Webb' width='205' object-fit='contain')
           
   .section.row
     .section-content
