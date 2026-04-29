@@ -4,33 +4,143 @@ append head
   - css = '/members/students/style.css'
 
 block pageTitle
-  | Students
+  | Sunderland University Students
 
 block headerImage
-  - const headerImage = 'members/students_header'
+  - const headerImage = 'members/uni_header'
 
 block sections
+  -  const coachImages = ['Steve_1.webp', 'Steve_2.webp', 'Steve_3.webp', 'Steve_4.webp','Steve_5.webp', 'Steve_6.webp', 'Steve_7.webp', 'Steve_8.webp', 'Steve_9.webp',];
+  -  const randomImage = coachImages[Math.floor(Math.random() * coachImages.length)];
+
+  a#sign-up-button.header-button(role='button' tabindex='0' aria-label='Scroll to How to Join to Sign Up Now') Sign Up Now
+
   .section.row
     .section-content
-      h1 Placeholder title
-      p This should be some info related to the students.
-      p Two or three paragraphs would probably be good.
-      h1 Placeholder title 2
-      p You can have multiple titles in a single section if you want.
+      p This page is intended for University of Sunderland students.
+      p We aim to introduce rowing to everyone, both socially at the club and competitively at local and regional races (please see the <a href="/events">events page</a> for more information on races).
+      p Sessions will aim to improve your rowing by mastering your ability to row with others confidently. Once you are able to get into a boat with any other semi-experienced members and consistently row without any major difficulties, you will then be invited to join more on-the-water sessions. Typically sessions will vary between either longer paddles aimed at technical ability and endurance or sprint-based sessions that may challenge both fitness and technical ability in a faster-paced environment.
+      p In addition to the usual training held at the boathouse, University of Sunderland students are also eligible to join a circuit session held at City Space at the university. This session only available during our winter training months.
+      p These sessions are split in this way, as the invitation-only sessions can be a lot more challenging for less experienced rowers, and the open-to-all sessions will have a lot more focus on technical ability. This method works to progress each individual in the most well-suited environment possible so that people are not pushed too early, which may subsequently lead to a loss of interest or frustration. Please remember that rowing is like anything else and will take time to master, so don't put too much pressure on yourself. In addition, separating sessions also helps the coaches to manage safety cover and time spent with each crew; having many crews on the water at varying abilities can be very difficult to manage, especially with our ever-expanding community of members.
+      p Invitation-only sessions only apply outside of winter training; during this time all weekday sessions are available to everyone. This is because sessions are moved indoors and become predominantly RowErg based, as it is too dark outside. Session difficulty may still vary per day, but a coach can provide easier sessions or further information as to which days are less challenging and how sessions can be adapted to best suit you.
+      
     .section-attachments.important
-      .plan.attachment
-        .plan-name Students Training
-        .plan-price
-          .plan-price-value £50
-          .plan-price-per annually
       .attachment
-        h2 Coaches
-        ul
-          li Stephen Beadling
+        .coachInfo
+          h2 University Coach
+          h3 Stephen Beadling
+          ul
+            li Level 2 Rowing Coach
+            li First Aid Qualified
+            li DBS Checked
+          img(src=`/assets/members/coaches/${randomImage}` alt='University Coach Stephen Beadling' width='205' object-fit='contain')
+  
+  .section.row
+    .section-content
+      h1 Training Times
+      p Below is a rough outline for adult training times; however, this is subject to change for any given week due to events the club may be participating in, weather conditions, or any other extenuating circumstances.
+      p Please contact us before attending sessions; this just helps us to better plan for everyone attending.
+      h3 Summer Training:
+      p <small><i>(Typically March through to September)</i></small> 
+      table
+        thead
+          tr 
+            th Day
+            th Restrictions
+            th Time
+            th Extra info
+        tbody
+          tr
+            td Monday
+            td Invitation only
+            td 6:30pm - 8:00pm
+            td
+          tr
+            td Tuesday
+            td Invitation only
+            td 6:30pm - 8:00pm
+            td
+          tr
+            td Wednesday
+            td Open to all
+            td 6:30pm - 8:00pm 
+            td
+          tr
+            td Thursday
+            td Invitation only
+            td 6:30pm - 8:00pm
+            td
+          tr
+            td Friday
+            td Rest Day
+            td
+            td
+          tr
+            td Saturday
+            td Open to all
+            td Usually 10:30am  
+            td (Dependent on weather and events)
+          tr
+            td Sunday
+            td Open to all
+            td Usually 10:30am  
+            td (Dependent on weather and events)
+      h3 Winter Training:
+      p <small><i>(Typically October through to February)</i></small>
+      table
+        thead
+          tr 
+            th Day
+            th Restrictions
+            th Time
+            th Extra info
+        tbody
+          tr
+            td Monday
+            td Open to all
+            td 6:30pm - 8:00pm
+            td
+          tr
+            td Tuesday
+            td Open to all
+            td 6:30pm - 8:00pm
+            td Additionally a circuit session is also held at city space at the university just after the usual session time
+          tr
+            td Wednesday
+            td Open to all
+            td 6:30pm - 8:00pm
+            td 
+          tr
+            td Thursday
+            td Open to all
+            td 6:30pm - 8:00pm
+            td
+          tr
+            td Friday
+            td Rest Day
+            td
+            td
+          tr
+            td Saturday
+            td Open to all
+            td Usually 10:30am  
+            td (Dependent on weather and events)
+          tr
+            td Sunday
+            td Open to all
+            td Usually 10:30am  
+            td (Dependent on weather and events)
+      p Please note that any changes to times will be announced within the relevant WhatsApp groups.
+  
   .section
-    h1 Placeholder title 3
-    p Add however many sections you need.
+    #sign-up-section.scroll-stop
+    div
+      h1 How To Join
+      p If you  are a University of Sunderland student and would like to join our club, then please get in touch by clicking the button below.
+      a.payment-button(href='https://sj.sunderland.ac.uk/student-information/support-services/team-sunderland/clubs/rowing/') 
+        h4 University of Sunderland Rowing
+        p Click here for contact information and to learn more
 
-block afterGallery
-  #videos.section
-    .video: <iframe width="560" height="315" src="https://www.youtube.com/embed/ZBMbNOI7kiM" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+  .section
+    .videoCarousel
+      <div data-mc-src="58e0bf63-e874-4636-80a9-04dd1417a109#youtube"></div><script src="https://cdn2.woxo.tech/a.js#6942bad8c722518d25a35793" async data-usrc></script>
