@@ -234,7 +234,6 @@ const events = Object.entries(await fetch('/assets/events.json').then(e => e.jso
 const now = new Date
 // calendar.setMonth(now.getFullYear(), now.getMonth())
 
-// Filter out recurring and past events, sort them by date, and get the first three
 for (const event of events.filter(e => e.date - now >= 0 && (e.date.getFullYear() === now.getFullYear() || e.date.getFullYear() === now.getFullYear() + 1) && !e.attendance).sort((a, b) => a.date - b.date)) {
   // Add event to the upcoming events list
   $('#upcoming-events').append(
