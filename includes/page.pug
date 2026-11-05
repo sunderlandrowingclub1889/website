@@ -6,6 +6,7 @@ html(lang='en')
     -
       let title = 'Sunderland Rowing Club',
           desc = 'This website is about a small rowing club, located in Sunderland known as Sunderland Rowing Club.',
+          image = `https://${self.domain}/assets/icon.png`,
           themeColor = '#0A71B9',
           css = '/style.css'
     
@@ -15,10 +16,8 @@ html(lang='en')
     meta(name='og:title', content=title)
     meta(name='og:description', content=desc)
     meta(name='og:image', content='https://sunderlandrowingclub.co.uk/assets/Misc/og-image.webp')
-    meta(property="og:url" content='https://sunderlandrowingclub.co.uk/')
     meta(name='theme-color', content=themeColor)
     meta(name='viewport', content='width=device-width')
-    meta(http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data:;")
     meta(name="referrer" content="strict-origin-when-cross-origin")
     link(rel='preconnect', href='https://fonts.googleapis.com')
     link(rel='preconnect', href='https://fonts.gstatic.com', crossorigin)
